@@ -1,6 +1,11 @@
 {
-  "name": "xiwcxgithubio",
-  "version": "0.0.0",
+  "name": "welchcanavan.com",
+  "homepage": "http://xiw.cx",
+  "authors": [
+    "Welch Canavan <welch.canavan@gmail.com>"
+  ],
   "dependencies": {
+    "picturefill": "~1.2.1",
+    "momentjs": "~2.5.1"
   }
 }

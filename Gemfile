@@ -2,6 +2,7 @@ source "http://rubygems.org"
 
 gem 'jekyll', '~>1.4.0'
 gem 'redcarpet'
+gem "mini_magick", "~> 3.7.0"
 gem 'compass', '>=0.12'
 gem "sass-globbing", "~> 1.1.0"
 gem "toolkit", "~> 1.3.8"

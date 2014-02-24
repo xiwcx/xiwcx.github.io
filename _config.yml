@@ -4,10 +4,11 @@
 # 3. config.yml
 
 name: xiwcx.github.io
-description: 
+description:
 author:
   name: Welch Canavan
   email: welch.canavan@gmail.com
+permalink: pretty
 
 # Grunt handles images and assets.
 exclude: ['img', 'css', 'js', 'fonts',

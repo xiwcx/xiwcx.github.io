@@ -1,0 +1,2 @@
+# Brewfile
+install imagemagick
