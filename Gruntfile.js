@@ -124,7 +124,10 @@ module.exports = function (grunt) {
         httpImagesPath: '/img',
         httpGeneratedImagesPath: '/img/generated',
         outputStyle: 'expanded',
-        raw: 'extensions_dir = "<%= yeoman.app %>/_bower_components"\n'
+        raw: 'extensions_dir = "<%= yeoman.app %>/_bower_components"\n',
+        require: [
+          'sass-globbing'
+        ]
       },
       dist: {
         options: {

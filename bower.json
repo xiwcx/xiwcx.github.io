@@ -6,6 +6,7 @@
   ],
   "dependencies": {
     "picturefill": "~1.2.1",
-    "momentjs": "~2.5.1"
+    "momentjs": "~2.5.1",
+    "fluidity": "git@github.com:mrmrs/fluidity.git#0.2.0"
   }
 }

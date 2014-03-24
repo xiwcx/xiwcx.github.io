@@ -8,7 +8,7 @@ description:
 author:
   name: Welch Canavan
   email: welch.canavan@gmail.com
-permalink: pretty
+permalink: /:title/
 
 # Grunt handles images and assets.
 exclude: ['img', 'css', 'js', 'fonts',
