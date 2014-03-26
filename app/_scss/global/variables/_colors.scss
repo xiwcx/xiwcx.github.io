@@ -1,0 +1,12 @@
+$color-sand:         hsl(35, 40%, 95%);
+$color-blue-dark:    hsl(230, 40%, 20%);
+$color-green-dark:   hsl(125, 40%, 20%);
+$color-grey-dark:    hsl(0, 0%, 20%);
+
+$color-primary:      $color-grey-dark;
+$color-secondary:    $color-green-dark;
+$color-tertiary:     $color-blue-dark;
+$color-background:   $color-sand;
+$color-text:         $color-grey-dark;
+$color-text-inverse: invert($color-text);
+$color-link: lighten($color-tertiary, 30);

@@ -10,34 +10,35 @@
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
     <!-- build:css({app,.tmp}) /css/main.css -->
-    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/_bower_components/normalize-css/normalize.css">
     <link rel="stylesheet" href="/_bower_components/fluidity/css/fluidity.css">
-    <!-- <link rel="stylesheet" href="/css/main.css"> -->
+    <link rel="stylesheet" href="/_bower_components/pygments/css/monokai.css">
+    <link rel="stylesheet" href="/css/main.css">
     <!-- endbuild -->
     <!-- endbuild -->
 
+    <link rel="alternate" type="application/rss+xml" title="{{site.author.name}} » Feed" href="/feed/feed.xml">
+
   </head>
+  <body>
+  <body>
   <body>
     <!--[if lt IE 8]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <header role="banner">
+    <header class="centercolumn" role="banner">
       <h1><a href="/">I. Welch Canavan</a></h1>
-      <nav role="navigation">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/colophon">Colophon</a>
+      <nav class="nav-container" role="navigation">
+        <a class="nav-item" href="/">Home</a>
+        <a class="nav-item" href="/about">About</a>
+        <a class="nav-item" href="/colophon">Colophon</a>
       </nav>
     </header>
 
-    <main>{{ content }}</main>
+    <main class="centercolumn">{{ content }}</main>
 
-    <footer>
-      <p>
-        <a href="http://www.flickr.com/photos/xiwcx">Flickr</a>
-        <a href="https://github.com/xiwcx">Github</a>
-        <a href="https://twitter.com/xiwcx">Twitter</a>
-      </p>
+    <footer class="centercolumn">
+      <p>You can find me on <a href="http://www.flickr.com/photos/xiwcx">Flickr</a>, <a href="https://github.com/xiwcx">Github</a>, and <a href="https://twitter.com/xiwcx">Twitter</a>. You can subscribe to this blog using <a href="/feed/feed.xml">RSS</a>.</p>
 
       <p><small>Content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</small></p>
     </footer>

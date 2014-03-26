@@ -1,12 +1,21 @@
 {
   "name": "welchcanavan.com",
-  "homepage": "http://xiw.cx",
+  "version": "0.0.0",
+  "homepage": "https://github.com/xiwcx/xiwcx.github.io",
   "authors": [
     "Welch Canavan <welch.canavan@gmail.com>"
   ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/_bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "picturefill": "~1.2.1",
-    "momentjs": "~2.5.1",
-    "fluidity": "git@github.com:mrmrs/fluidity.git#0.2.0"
+    "pygments": "~1.6.1",
+    "html5-boilerplate": "~4.3.0"
   }
 }
