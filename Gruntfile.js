@@ -126,7 +126,8 @@ module.exports = function (grunt) {
         outputStyle: 'expanded',
         raw: 'extensions_dir = "<%= yeoman.app %>/_bower_components"\n',
         require: [
-          'sass-globbing'
+          'sass-globbing',
+          'modular-scale'
         ]
       },
       dist: {

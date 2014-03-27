@@ -1,0 +1,10 @@
+.end {
+  display: block;
+  margin: 0 auto;
+  margin-top: $ms-quadruple;
+  margin-bottom: $ms-quadruple;
+
+  path {
+    fill: $color-lowlight;
+  }
+}

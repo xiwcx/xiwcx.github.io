@@ -1,0 +1,68 @@
+// Font Families
+// -------------
+
+%font-anti-aliased {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+%font-default {
+  font-family: $font-body;
+  font-weight: 400;
+  font-style: normal;
+}
+
+%font-default-em {
+  font-family: $font-body;
+  font-weight: 400;
+  font-style: italic;
+}
+
+%font-default-strong {
+  font-family: $font-body;
+  font-weight: 700;
+  font-style: normal;
+}
+
+%font-alternate {
+  @extend %font-anti-aliased;
+
+  font-family: $font-headings;
+  font-weight: 600;
+  font-style: normal;
+}
+
+%font-mono {
+  // @extend %font-anti-aliased;
+
+  font-family: $font-mono;
+  font-weight: 400;
+  font-style: normal;
+}
+
+// Font Sizes
+// ----------
+
+%font-size-sm {
+  @include adjust-font-size-to($ms-sm);
+}
+
+%font-size-norm {
+  @include adjust-font-size-to($ms-norm);
+}
+
+%font-size-med {
+  @include adjust-font-size-to($ms-med);
+}
+
+%font-size-lrg {
+  @include adjust-font-size-to($ms-lrg);
+}
+
+%font-size-xlrg {
+  @include adjust-font-size-to($ms-xlrg);
+}
+
+%font-size-xxlrg {
+  @include adjust-font-size-to($ms-xxlrg);
+}

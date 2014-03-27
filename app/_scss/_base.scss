@@ -5,26 +5,71 @@
 }
 
 html {
-  background-color: $color-background;
+  background-color: $color-basic;
   color: $color-text;
-  font-family: $font-default;
+  font-family: $font-body;
   font-size: 90%;
+  padding: $ms-double 0;
 
   @media #{$mq-sm} {
     font-size: 100%;
   }
 
   @media #{$mq-med} {
-    font-size: 115%;
+    font-size: 120%;
   }
 
   @media #{$mq-lrg} {
-    font-size: 130%;
+    font-size: 140%;
   }
 
   @media #{$mq-xlrg} {
-    font-size: 145%;
+    font-size: 160%;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %font-alternate;
+
+  margin: 0;
+
+  a {
+    color: $color-secondary;
+  }
+}
+
+h1 {
+  @extend %font-size-xxlrg;
+}
+
+h2 {
+  @extend %font-size-xlrg;
+}
+
+h3 {
+  @extend %font-size-lrg;
+}
+
+h4 {
+  @extend %font-size-med;
+}
+
+h5 {
+  @extend %font-size-norm;
+}
+
+h6 {
+  @extend %font-size-sm;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: $ms-default;
 }
 
 a {
@@ -37,32 +82,50 @@ a {
   }
 }
 
+code {
+  @extend %font-mono;
+
+  background-color: $color-lowlight;
+}
+
+
+$label-size: 1em;
+$label-vertical-padding: $ms-half/2;
+$label-height: $label-size + ($label-vertical-padding * 2);
+
 pre {
   background-color: $color-primary;
-  border-radius: $border-radius;
   position: relative;
+  overflow: hidden;
 
   code[data-lang] {
     background-color: transparent;
     display: block;
     overflow-y: scroll;
-    padding-top: 1.5em;
+    padding: ($label-height+$ms-half) $ms-half $ms-half $ms-half;
 
     &:before {
+      @extend %font-alternate;
       background-color: $color-secondary;
       content: attr(data-lang);
-      color: $color-text-inverse;
-      font-size: 1em;
+      color: $color-basic;
+      font-size: $label-size;
       left: 0;
-      padding: .25em;
+      line-height: 1;
+      padding: $label-vertical-padding $ms-half;
       position: absolute;
       top: 0;
-      width: 100%;
+      width: 101%;
     }
   }
 }
 
-code {
-  background-color: darken($color-background, 10);
-  border-radius: $border-radius;
+time {
+  @extend %font-default-em;
+
+  color: $color-quadrary;
+}
+
+small {
+  @extend %font-size-sm;
 }

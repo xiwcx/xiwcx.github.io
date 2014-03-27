@@ -1,0 +1,19 @@
+.post-header {
+  margin-bottom: $ms-double;
+}
+
+.post-body {
+  > * {
+    margin-bottom: $ms-default !important; //override embed inline style
+  }
+
+  .twitter-tweet-rendered {
+    // Override embedded tweet styles    
+    margin-top: 0 !important;
+    margin-right: auto !important;
+    margin-bottom: $ms-default !important;
+    margin-left: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}

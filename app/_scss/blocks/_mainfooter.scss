@@ -1,0 +1,8 @@
+.mainfooter {
+  margin-top: $ms-quadruple;
+  padding: $ms-default;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
