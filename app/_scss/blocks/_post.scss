@@ -3,12 +3,19 @@
 }
 
 .post-body {
-  > * {
+  > p,
+  > ul,
+  > ol,
+  > blockqoute,
+  > iframe,
+  > video,
+  > audio,
+  pre {
     margin-bottom: $ms-default !important; //override embed inline style
   }
 
   .twitter-tweet-rendered {
-    // Override embedded tweet styles    
+    // Override embedded tweet styles
     margin-top: 0 !important;
     margin-right: auto !important;
     margin-bottom: $ms-default !important;
