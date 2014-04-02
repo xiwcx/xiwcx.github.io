@@ -1,6 +1,5 @@
 .nav-container {
-  .flexbox &,
-  .flexbox-legacy & {
+  .flexbox & {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,8 +10,7 @@
   display: block;
   margin-bottom: $ms-quarter;
 
-  .flexbox &,
-  .flexbox-legacy & {
+  .flexbox & {
     flex: 1;
     align-self: center;
     text-align: center;
