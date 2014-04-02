@@ -319,12 +319,16 @@ module.exports = function (grunt) {
       }
     },
     buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
       dist: {
         options: {
-          remote: 'master',
-          branch: 'master',
-          commit: true,
-          push: true
+          remote: 'git@github.com:xiwcx/xiwcx.github.io.git',
+          branch: 'master'
         }
       }
     },
@@ -407,7 +411,7 @@ module.exports = function (grunt) {
     'coffeelint:check',
     'coffee:dist',
     'jshint:all',
-    'csslint:check'
+    // 'csslint:check'
   ]);
 
   grunt.registerTask('build', [

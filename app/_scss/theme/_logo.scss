@@ -1,12 +1,14 @@
 .logo-container {
   width: 6em;
+  height: 4em;
 
   .flexbox &,
   .flexbox-legacy & {
     display: inline-block;
     position: relative;
-    width: 80%;
-    padding-bottom: 55%;
+    height: 0;
+    width: 50%;
+    padding-bottom: 35%;
     vertical-align: middle;
     overflow: hidden;
     margin: 0 auto;
@@ -24,4 +26,10 @@
     top: 0;
     left: 0;
   }
+}
+
+.logo-text {
+  color: $color-primary;
+  text-transform: lowercase;
+  margin-top: $ms-half;
 }
