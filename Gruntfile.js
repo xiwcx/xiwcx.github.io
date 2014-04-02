@@ -410,7 +410,7 @@ module.exports = function (grunt) {
     'compass:server',
     'coffeelint:check',
     'coffee:dist',
-    'jshint:all',
+    // 'jshint:all',
     // 'csslint:check'
   ]);
 
