@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>welchcanavan.com</title>
+		<description>The personal website of I. Welch Canavan</description>		
+		<link>http://welchcanavan.com</link>
+		<atom:link href="http://welchcanavan.com/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Developing Locally with Typekit, Xip.io, and Browsersync</title>
+				<description>&lt;p&gt;Recently I ran in to an interesting problem. When you initialize a new &amp;quot;kit&amp;quot; on &lt;a href=&quot;http://typekit.com&quot;&gt;typekit&lt;/a&gt; you are prompted to enter a list of domains that your kit will be allowed to function properly on. Typically you would enter the address of your live site (e.g. &lt;code&gt;&amp;#39;http://example.com&amp;#39;&lt;/code&gt;) as well as an address for local testing (e.g. &lt;code&gt;&amp;#39;192.168.1.10&amp;#39;&lt;/code&gt; or &lt;code&gt;&amp;#39;localhost&amp;#39;&lt;/code&gt;). Neither of these options for local development worked for me. Managing a list of &lt;abbr title=&quot;Local Area Network&quot;&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Local_area_network&quot;&gt;LAN&lt;/a&gt;&lt;/abbr&gt; addresses would be foolish (and probably impossible) on a large team where people are working from different locations. Simply stating &lt;code&gt;localhost&lt;/code&gt; would prevent fonts from being previewed on other devices with a tool like &lt;a href=&quot;http://browsersync.io/&quot;&gt;BrowserSync&lt;/a&gt;, &lt;a href=&quot;http://vanamco.com/ghostlab&quot;&gt;Ghostlab&lt;/a&gt;, or &lt;a href=&quot;http://html.adobe.com/edge/inspect&quot;&gt;Adobe Edge Inspect&lt;/a&gt; which all rely on your computer&amp;#39;s LAN address.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/typekit-create.png&quot; alt=&quot;Typekit kit creation prompt&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;In my moment of need I turned to twitter and thankfully &lt;a href=&quot;http://chipcullen.com&quot;&gt;Chip Cullen&lt;/a&gt; answered my call:&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/xiwcx&quot;&gt;@xiwcx&lt;/a&gt; have you checked out &lt;a href=&quot;http://t.co/COgpA7CL5V&quot;&gt;http://t.co/COgpA7CL5V&lt;/a&gt;? Just include *.xip.io in your kit setup.&lt;/p&gt;&amp;mdash; Chip Cullen (@chipcullen) &lt;a href=&quot;https://twitter.com/chipcullen/statuses/440623861043052544&quot;&gt;March 3, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Some of the developers at &lt;a href=&quot;https://37signals.com&quot;&gt;37signals&lt;/a&gt; developed a custom DNS tool named &lt;a href=&quot;http://xip.io&quot;&gt;xip.io&lt;/a&gt; to deal with similar problems. You can use xip to &amp;quot;trick&amp;quot; your browser in to thinking an address like &lt;code&gt;www.10.5.3.15.xip.io&lt;/code&gt; or  &lt;code&gt;10.5.3.15.xip.io&lt;/code&gt; is &lt;code&gt;10.5.3.15&lt;/code&gt;. All you have to do after this is add &lt;code&gt;*.xip.io&lt;/code&gt; to your typekit &amp;quot;kit&amp;quot; settings and you&amp;#39;re good to go.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/typekit-settings.png&quot; alt=&quot;Typekit kit creation prompt&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Bonus&lt;/h2&gt;
+
+&lt;p&gt;After solving this, I discovered I was running in to another problem: the &lt;code&gt;.xip.io&lt;/code&gt; suffix was interfering with live reloading in Browsersync (my preferred device syncing tool: fully featured, open source, *nix agnostic). &lt;a href=&quot;http://shakyshane.com&quot;&gt;Shane Osborne&lt;/a&gt;, the maintainer of Browsersync &lt;a href=&quot;https://github.com/shakyShane/grunt-browser-sync/issues/41#issuecomment-37136050&quot;&gt;responded to my feature request very promptly&lt;/a&gt; and there is now an option to append whatever suffix you like to your IP address. Here is an example of adding the option to your &lt;a href=&quot;http://gruntjs.com/sample-gruntfile&quot;&gt;gruntfile&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;coffee language-coffee&quot; data-lang=&quot;coffee&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;browserSync:&lt;/span&gt;
+        &lt;span class=&quot;nv&quot;&gt;serve:&lt;/span&gt;
+            &lt;span class=&quot;nv&quot;&gt;options:&lt;/span&gt;
+                &lt;span class=&quot;nv&quot;&gt;hostnameSuffix: &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;.xip.io&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+				<pubDate>Sun, 23 Mar 2014 00:00:00 -0400</pubDate>
+				<link>http://welchcanavan.com/developing-locally-with-typekit-and-xip/</link>
+				<guid isPermaLink="true">http://welchcanavan.com/developing-locally-with-typekit-and-xip/</guid>
+			</item>
+		
+	</channel>
+</rss>
