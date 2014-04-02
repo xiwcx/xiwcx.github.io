@@ -1,7 +1,8 @@
 $font-body: "ff-tisa-web-pro", serif;
 $font-headings: "proxima-nova", sans-serif;
 // $font-mono: "source-code-pro", mono;
-$font-mono: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+// $font-mono: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+$font-mono: Monaco, Consolas, "Lucida Console", monospace;
 
 // MS Settings
 @import "modular-scale";
@@ -34,6 +35,7 @@ $base-font-size: $ms-base;
 $base-line-height: 1.5;
 
 $ms-default    : 1.5em;
+$ms-quarter    : $ms-default / 4;
 $ms-half       : $ms-default / 2;
 $ms-double     : $ms-default * 2;
 $ms-triple     : $ms-default * 3;

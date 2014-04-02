@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "pygments": "~1.6.1",
-    "html5-boilerplate": "~4.3.0"
+    "html5-boilerplate": "~4.3.0",
+    "modernizr": "~2.7.2"
   }
 }

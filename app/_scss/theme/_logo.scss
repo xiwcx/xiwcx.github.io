@@ -1,0 +1,27 @@
+.logo-container {
+  width: 6em;
+
+  .flexbox &,
+  .flexbox-legacy & {
+    display: inline-block;
+    position: relative;
+    width: 80%;
+    padding-bottom: 55%;
+    vertical-align: middle;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+}
+
+.logo-logo {
+  fill: $color-primary;
+  margin-bottom: $ms-default;
+
+  .flexbox &,
+  .flexbox-legacy & {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
