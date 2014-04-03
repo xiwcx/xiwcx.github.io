@@ -96,6 +96,7 @@ $label-height: $label-size + ($label-vertical-padding * 2);
 pre {
   position: relative;
   overflow: hidden;
+  // background-color: $color-primary;
 
   code[data-lang] {
     background-color: transparent;
