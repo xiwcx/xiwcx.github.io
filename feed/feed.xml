@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>welchcanavan.com</title>
-		<description>The personal website of I. Welch Canavan</description>		
+		<description>The personal website of I. Welch Canavan</description>
 		<link>http://welchcanavan.com</link>
 		<atom:link href="http://welchcanavan.com/feed.xml" rel="self" type="application/rss+xml" />
 		
@@ -31,8 +31,9 @@
                 &lt;span class=&quot;nv&quot;&gt;hostnameSuffix: &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;.xip.io&amp;quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
 				<pubDate>Sun, 23 Mar 2014 00:00:00 -0400</pubDate>
-				<link>http://welchcanavan.com/developing-locally-with-typekit-and-xip/</link>
-				<guid isPermaLink="true">http://welchcanavan.com/developing-locally-with-typekit-and-xip/</guid>
+				
+        <link>http://xiw.cx/PlTlyN</link>
+				<guid isPermaLink="true">http://xiw.cx/PlTlyN</guid>
 			</item>
 		
 	</channel>
