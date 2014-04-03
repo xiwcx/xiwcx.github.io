@@ -3,6 +3,11 @@ layout: default
 title: About
 ---
 
+<figure>
+  <img class="imgborder" alt="A portrait of me in my home in Braddock, PA. Circa 2010" src="/img/me.jpg">
+  <figcaption>credit: <a href="http://www.melodiemcdaniel.com/">Melodie McDaniel</a></figcaption>
+</figure>
+
 # About
 
 I have lived in and around DC for most of my life. The fierce [do it yourself](http://en.wikipedia.org/wiki/Do_it_yourself#Subculture) spirit of local bands I encountered as a teenager drove me to start my own bands, book shows, and make flyers. I enjoyed that degree of control over my creative process, so I taught myself how to make websites for my and my friends' bands. While I worked a stint as a systems administrator my hobby grew into a passion. I enjoy the challenge of crafting performant, responsive, and accessible websites; I'm lucky that it provides me with a living, and I'm currently employed as a web developer by the [National Geographic Society](http://nationalgeographic.com).
