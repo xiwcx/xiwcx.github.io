@@ -7,7 +7,7 @@
 		<atom:link href="http://welchcanavan.com/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
-				<title>Styelguide Generator Roundup</title>
+				<title>Styleguide Generator Roundup</title>
 				<description>&lt;p&gt;Styleguides for websites are by no means a &lt;a href=&quot;http://24ways.org/2011/front-end-style-guides/&quot;&gt;new idea&lt;/a&gt;, but they are more easily talked about than implemented, which is why people are &lt;a href=&quot;http://alistapart.com/article/creating-style-guides&quot;&gt;still advocating&lt;/a&gt; for them.&lt;/p&gt;
 
 &lt;p&gt;Thankfully there are many tools—with more arriving all the time—that automatically generate styleguides based directly upon the code you write. Recently I was tasked with creating a living styleguide by my employer and I decided to take a good look at my alternatives before starting. Following is a run down of the strengths and weaknesses of  various options. While I wasn&amp;#39;t able to investigate &lt;a href=&quot;http://vinspee.me/style-guide-guide/&quot;&gt;all of them&lt;/a&gt;, I think I covered a diverse group.&lt;/p&gt;
