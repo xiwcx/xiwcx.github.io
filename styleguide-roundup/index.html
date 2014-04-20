@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Styelguide Generator Roundup</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -34,32 +34,85 @@
       </nav>
     </header>
 
-    <main class="centercolumn">
-  <article class="preview-container">
-    <header class="preview-header">
-      <h2><a href="/styleguide-roundup/">Styelguide Generator Roundup</a></h2>
-      <time datetime="2014-04-20T00:00:00-04:00">April 20, 2014</time>
-    </header>
-    <p>Styleguides for websites are by no means a new idea, but they are more easily talked about than implemented, which is why people are still advocating for them.
- <a href="/styleguide-roundup/">read more</a></p>
-  </article>
+    <main class="centercolumn"><article class="post-container">
+  <header class="post-header">
+    <h1>Styelguide Generator Roundup</h1>
+    <time datetime="2014-04-20T00:00:00-04:00">April 20, 2014</time>
 
-  <article class="preview-container">
-    <header class="preview-header">
-      <h2><a href="/responsive-modular-scale/">Responsive Typographic Modular Scale with Sass</a></h2>
-      <time datetime="2014-04-09T00:00:00-04:00">April 9, 2014</time>
-    </header>
-    <p>I was relieved when I first came across Tim Brown&#39;s talk on typographic modular scale and his accompanying tool. For a non-designer like me, it takes the guess work out of deciding upon font sizes. Team Sass&#39;s sass plugin makes... <a href="/responsive-modular-scale/">read more</a></p>
-  </article>
+  </header>
+  <main class="post-body">
+  <p>Styleguides for websites are by no means a <a href="http://24ways.org/2011/front-end-style-guides/">new idea</a>, but they are more easily talked about than implemented, which is why people are <a href="http://alistapart.com/article/creating-style-guides">still advocating</a> for them.</p>
 
-  <article class="preview-container">
-    <header class="preview-header">
-      <h2><a href="/developing-locally-with-typekit-and-xip/">Developing Locally with Typekit, Xip.io, and Browsersync</a></h2>
-      <time datetime="2014-03-23T00:00:00-04:00">March 23, 2014</time>
-    </header>
-    <p>Recently I ran in to an interesting problem. When you initialize a new &quot;kit&quot; on typekit you are prompted to enter a list of domains that your kit will be allowed to function properly on. Typically you would enter the... <a href="/developing-locally-with-typekit-and-xip/">read more</a></p>
-  </article>
+<p>Thankfully there are many tools—with more arriving all the time—that automatically generate styleguides based directly upon the code you write. Recently I was tasked with creating a living styleguide by my employer and I decided to take a good look at my alternatives before starting. Following is a run down of the strengths and weaknesses of  various options. While I wasn&#39;t able to investigate <a href="http://vinspee.me/style-guide-guide/">all of them</a>, I think I covered a diverse group.</p>
 
+<p>It became clear in my research that there are two kinds of generators: some are better for designing while others are better for documenting. I&#39;ve split them in to these two groups.</p>
+
+<h2>Generators for Designing</h2>
+
+<p>If you&#39;re still trying things out, exploring, or designing in the browser these are the tools for you.</p>
+
+<h3>Pattern Lab</h3>
+
+<p><a href="http://patternlab.io/">Pattern Lab</a> is built by <a href="http://dmolsen.com/">Dave Olson</a> and <a href="http://bradfrostweb.com/">Brad Frost</a> based upon Frost&#39;s <a href="http://bradfrostweb.com/blog/post/atomic-web-design/">atomic design</a> methodology. Atomic Design is a fantastic concept, starting out with that level of organization is big win. Pattern Lab comes out of the box with a pretty complete set of HTML elements to ensure you don&#39;t forget anything when creating your base styles. That way when you actually need an HTML5 Range input down the line, you&#39;re already covered.</p>
+
+<p>If you don&#39;t like the idea of working with PHP there is also a Node version, but it&#39;s apparently <a href="https://twitter.com/brad_frost/status/457161455599910912">behind</a> in terms of features. Brad Frost has also documented his <a href="https://gist.github.com/bradfrost/10906886">typical Gruntfile</a> for compiling Sass files in conjunction with Pattern lab.</p>
+
+<h3>Style Prototype</h3>
+
+<p><a href="https://github.com/Team-Sass/generator-style-prototype">Style Prototype</a> is built by <a href="http://thecodingdesigner.com/">Mason Wendell</a> and <a href="http://snugug.com/">Sam Richard</a> of <a href="https://github.com/Team-Sass">Team Sass</a> and just might be the Cadillac of styleguide generators. Style Prototype projects are scaffolded with <a href="http://yeoman.io/">Yeoman</a> and include a wide arrary of features including (but not limited to) automatically generated <a href="http://styletil.es/">Style Tiles</a>, <a href="https://github.com/Team-Sass/generator-style-prototype#changing-version-number">versioning</a> for style, <a href="https://github.com/Team-Sass/generator-style-prototype#exporting-final-site">deployment</a> to a preview server, and exportation of your finished product as a <a href="https://github.com/Team-Sass/generator-style-prototype#creating-a-compass-extension">Compass extension</a>.</p>
+
+<p>You will need to be pretty familiar with <a href="http://sass-lang.com/">Sass</a> as the .scss files—while intelligently organized—are a little tricky to wrap your head around at first. Style Prototype is probably the most fully featured of the generators, but it is also the most opinionated in terms of workflow and structure.</p>
+
+<p>Apparently <a href="https://twitter.com/Snugug/status/457266943637348352">2.0 is on the way</a>, so keep a lookout.</p>
+
+<h2>Generators for Documenting</h2>
+
+<p>If you&#39;re working with existing designs, sites, or patterns consider one of these:</p>
+
+<h3>Kalei, KSS, and Styledocco</h3>
+
+<p><a href="http://kaleistyleguide.com/">Kalei</a>, <a href="http://warpspire.com/kss/">KSS</a>, and <a href="http://jacobrask.github.io/styledocco/">StyleDocco</a> are all pretty similar. They parse your preprocessed or plain old stylesheets for formatted documentation blocks and spit out a documentation site with a default style. These are definitely the quickest options for getting you up and running with a styleguide. Check <a href="http://vinspee.me/style-guide-guide/">The Style Guide Guide</a> for their various technology stack compatibilities.</p>
+
+<h3>Hologram</h3>
+
+<p><a href="http://trulia.github.io/hologram/">Hologram</a> came on my radar in the last hour of my search thanks to a tweet from <a href="http://www.stubbornella.org/">Nicole Sullivan</a> and ended up winning me over.</p>
+
+<blockquote class="twitter-tweet" lang="en"><p>New talk about <a href="https://twitter.com/search?q=%23hologram&amp;src=hash">#hologram</a>, a style guide generator. With link to our live style guide! <a href="https://twitter.com/search?q=%23bootstrap3&amp;src=hash">#bootstrap3</a> <a href="http://t.co/2BoR3LDOt8">http://t.co/2BoR3LDOt8</a> /w Colin O&#39;Byrne</p>&mdash; Nicole Sullivan (@stubbornella) <a href="https://twitter.com/stubbornella/statuses/439078802019196929">February 27, 2014</a></blockquote>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Built by the developer team at <a href="https://github.com/trulia">Trulia</a>, Hologram is simple, flexible, and customizable. It comes with no boilerplate markup or default style, but it does come with the ability to parse the <a href="https://github.com/trulia/hologram#supported-preprocessorsfile-types">widest variety</a> of file type of any of the generators listed. Hologram works with Markdown, Javascript, and most of the popular CSS Preprocessors. Hologram combs a specified directory for formatted documentation blocks in any compatible filetype and allows you to configure your documentation as you see fit using categories and subcategories specified in <a href="similar%20to%20%5BJekyll%20Front-matter%5D">YAML</a>. This means you can document front end patterns that exist outside of your CSS (e.g. JS photo gallery or pop-up).</p>
+
+<p>Because of it&#39;s simplicity, Hologram is easy to integrate in to your project or workflow. You can see how I&#39;ve integrated Hologram in to my grunt workflow <a href="https://github.com/natgeo/mortar/blob/develop/gruntfile.coffee">on github</a>.</p>
+
+<h2>Conclusion</h2>
+
+<p>Hologram won me over because of my tendency as a developer to want customization and my task at hand (documenting a design that was mostly complete), but all of the options have serious strengths. I suggest you take at least two for a spin before heading too far down one path as you may discover features that are missing or undesirable. Hopefully this comparison helps to point you in the right direction. Good luck!</p>
+
+  </main>
+  <footer>
+    
+    <em>(Permalink: <a href="http://xiw.cx/1fcdga5">xiw.cx/1fcdga5</a>)</em>
+    <svg class="end" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="30.79" height="31.509" viewBox="0" enable-background="new 0 0 30.79 31.509" xml:space="preserve"><path fill="#010101" d="M6.79 21.272c-0.73-0.521-1.272-0.166-2.02 0.117 -1.446 0.547-2.326 1.776-3.608 2.474C0.841 24.038 0.527 24.175 0 23.906c0.777-0.862 1.168-1.999 2.356-2.396 0.602-0.199 0.245-0.819 0.65-1.186 1.328-1.202 2.516-2.558 3.808-3.801 1.375-1.322 2.719-2.706 4.244-3.836 1.741-1.29 1.916-3.035 1.746-4.868 -0.189-2.023 0.008-4.071-0.468-6.079 -0.185-0.774 0.458-1.033 1.131-1.22 1.382-0.383 2.375 0.479 3.312 1.146 0.867 0.616 1.763 1.365 1.986 2.598 0.146 0.803 0.673 0.611 1.152 0.225 1.486-1.201 2.999-2.373 4.451-3.614 0.716-0.611 1.292-1.013 2.4-0.829 1.07 0.179 2.15-0.012 3.016 0.882 0.746 0.772 1.108 1.473 0.979 2.707 -0.16 1.521-0.983 2.291-1.986 3.117 -1.514 1.248-2.895 2.64-4.314 3.989 -0.885 0.842-1.862 1.603-2.817 2.364 -0.998 0.793-1.523 1.583-1.641 2.943 -0.137 1.576 0.133 3.159-0.192 4.712 -0.059 0.278-0.004 0.454 0.199 0.624 0.488 0.411 0.604 0.898 0.332 1.493 -0.115 0.251-0.189 0.571 0.064 0.783 1.304 1.084 0.923 2.326 0.424 3.631 -0.239 0.625-0.153 1.296 0.112 1.938 0.251 0.604-0.75 2.389-1.35 2.275 -0.825-0.154-1.491-0.721-1.847-1.539 -0.729-1.679-1.02-3.49-1.571-5.223 -0.479-1.506-0.932-3.021-1.407-4.527 -0.228-0.721-0.733-0.76-1.325-0.475 -1.331 0.642-2.477 1.688-4.1 1.687 -0.562-0.001-0.372 0.667-0.542 1.016 -0.244 0.498-0.739 0.915-1.461 0.803 -0.512-0.081-1.091-0.249-1.285-0.625C5.739 22.001 6.489 21.696 6.79 21.272z"/></svg>
+  </footer>
+</article>
+
+<aside class="comments">
+ <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'xiwcx'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
 </main>
 
     <footer class="mainfooter centercolumn background--lowlight">
