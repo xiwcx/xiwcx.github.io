@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Styelguide Generator Roundup"
+title:  "Styleguide Generator Roundup"
 categories: tech
 ---
 
