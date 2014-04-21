@@ -49,7 +49,7 @@ Because of it's simplicity, Hologram is easy to integrate in to your project or 
 
 ## Conclusion
 
-I ended up using Hologram of my task at hand (documenting a design that was mostly complete) and my tendency as a developer to want the ability to customize, but all of the options have serious strengths. I suggest you take at least two for a spin before heading too far down one path as you may discover features that are missing or undesirable. Hopefully this comparison helps to point you in the right direction. Good luck!
+I ended up using Hologram because of my task at hand (documenting a design that was mostly complete) and my tendency as a developer to want the ability to customize, but all of the options have serious strengths. I suggest you take at least two for a spin before heading too far down one path as you may discover features that are missing or undesirable. Hopefully this comparison helps to point you in the right direction. Good luck!
 
 [new idea]: http://24ways.org/2011/front-end-style-guides/
 [1]: http://alistapart.com/article/creating-style-guides
