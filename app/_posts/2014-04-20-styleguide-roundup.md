@@ -43,13 +43,13 @@ If you're working with existing designs, sites, or patterns consider one of thes
 <blockquote class="twitter-tweet" lang="en"><p>New talk about <a href="https://twitter.com/search?q=%23hologram&amp;src=hash">#hologram</a>, a style guide generator. With link to our live style guide! <a href="https://twitter.com/search?q=%23bootstrap3&amp;src=hash">#bootstrap3</a> <a href="http://t.co/2BoR3LDOt8">http://t.co/2BoR3LDOt8</a> /w Colin O&#39;Byrne</p>&mdash; Nicole Sullivan (@stubbornella) <a href="https://twitter.com/stubbornella/statuses/439078802019196929">February 27, 2014</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Built by the developer team at [Trulia], Hologram is simple, flexible, and customizable. It comes with no boilerplate markup or default style, but it does come with the ability to parse the [widest variety] of file type of any of the generators listed. Hologram works with Markdown, Javascript, and most of the popular CSS Preprocessors. Hologram combs a specified directory for formatted documentation blocks in any compatible filetypes and allows you to configure your documentation as you see fit using categories and subcategories specified in [YAML] (similar to [Jekyll Front-matter]). This means you can document front end patterns that exist outside of your CSS (e.g. Javascript photo gallery or pop-up).
+Built by the developer team at [Trulia], Hologram is simple, flexible, and customizable. It comes with no boilerplate markup or default style, but it does come with the ability to parse the [widest variety] of file types of any of the generators listed. Hologram works with Markdown, Javascript, and most of the popular CSS Preprocessors. Hologram combs a specified directory for formatted documentation blocks in any compatible file types and allows you to configure your documentation as you see fit using categories and subcategories specified in [YAML][2] (similar to [Jekyll Front-matter]). This means you can document front end patterns that exist outside of your CSS (e.g. Javascript photo gallery or pop-up).
 
 Because of it's simplicity, Hologram is easy to integrate in to your project or workflow. You can see how I've integrated Hologram in to my grunt workflow [on github].
 
 ## Conclusion
 
-Hologram won me over because of my tendency as a developer to want customization and my task at hand (documenting a design that was mostly complete), but all of the options have serious strengths. I suggest you take at least two for a spin before heading too far down one path as you may discover features that are missing or undesirable. Hopefully this comparison helps to point you in the right direction. Good luck!
+I ended up using Hologram of my task at hand (documenting a design that was mostly complete) and my tendency as a developer to want the ability to customize, but all of the options have serious strengths. I suggest you take at least two for a spin before heading too far down one path as you may discover features that are missing or undesirable. Hopefully this comparison helps to point you in the right direction. Good luck!
 
 [new idea]: http://24ways.org/2011/front-end-style-guides/
 [1]: http://alistapart.com/article/creating-style-guides
@@ -84,5 +84,5 @@ Hologram won me over because of my tendency as a developer to want customization
 [Trulia]: https://github.com/trulia
 [on github]: https://github.com/natgeo/mortar/blob/develop/gruntfile.coffee
 [widest variety]: https://github.com/trulia/hologram#supported-preprocessorsfile-types
-[YAML]: https://github.com/trulia/hologram#document-yaml-section
+[2]: https://github.com/trulia/hologram#document-yaml-section
 [Jekyll Front-matter]: http://jekyllrb.com/docs/frontmatter/
