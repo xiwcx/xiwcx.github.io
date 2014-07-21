@@ -7,6 +7,85 @@
 		<atom:link href="http://welchcanavan.com/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>A Punk Handbill for the Twenty-first Century</title>
+				<description>&lt;p&gt;Making fliers for my high school punk bands is probably the first step I took on the path to becoming a web developer. Since it was the early two thousands I pieced together a working knowledge of photoshop instead of cutting up my parent&amp;#39;s magazines. I really enjoyed being self sufficient so when it came time to make the bands&amp;#39; websites I struggled through figuring that out as well.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#39;s been a while since I&amp;#39;ve booked a show, but I couldn&amp;#39;t pass up the opportunity when &lt;a href=&quot;http://wearedangers.com&quot;&gt;Dangers&lt;/a&gt; said they were looking for help with east coast dates. Since it had also been a while since I&amp;#39;d made my own flyer I wanted to try out a technique I&amp;#39;d been contemplating for a while: animated handbills made with &lt;a href=&quot;http://en.wikipedia.org/wiki/Scalable_Vector_Graphics&quot;&gt;SVG&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;div style=&quot;height:0;padding-bottom:130%;position:relative;overflow:hidden&quot;&gt;
+  &lt;iframe src=&quot;http://welchcanavan.com/dngrs-grf/&quot; frameBorder=&quot;0&quot; style=&quot;position:absolute;height:100%;left:0;top:0;width:100%&quot;&gt;
+    &lt;p&gt;&lt;img src=&quot;http://welchcanavan.com/dngrs-grf/2014-08-09-dngrs-grf.jpg&quot;&gt;&lt;/p&gt;
+  &lt;/iframe&gt;
+  &lt;a href=&quot;http://welchcanavan.com/dngrs-grf/2014-08-09-dngrs-grf.jpg&quot; style=&quot;position:absolute;height:100%;left:0;top:0;width:100%&quot;&gt;&amp;nbsp;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;You can grab the embed text here:&lt;/p&gt;
+
+&lt;p&gt;&lt;textarea style=&quot;resize:none&quot; rows=&quot;4&quot; onclick=&quot;this.focus();this.select()&quot; wrap=&quot;off&quot; readonly=&quot;readonly&quot;&gt;&lt;div style=&quot;height:0;padding-bottom:130%;position:relative;overflow:hidden&quot;&gt;
+  &lt;iframe src=&quot;http://welchcanavan.com/dngrs-grf/&quot; frameBorder=&quot;0&quot; style=&quot;position:absolute;height:100%;left:0;top:0;width:100%&quot;&gt;
+    &lt;p&gt;&lt;img src=&quot;http://welchcanavan.com/dngrs-grf/2014-08-09-dngrs-grf.jpg&quot;&gt;&lt;/p&gt;
+  &lt;/iframe&gt;
+  &lt;a href=&quot;http://welchcanavan.com/dngrs-grf/2014-08-09-dngrs-grf.jpg&quot; style=&quot;position:absolute;height:100%;left:0;top:0;width:100%&quot;&gt;&amp;nbsp;&lt;/a&gt;
+&lt;/div&gt;&lt;/textarea&gt;&lt;/p&gt;
+
+&lt;p&gt;In sci-fi movies animated advertisements are loud and obnoxious, but I wanted to try a subtler effect for my first attempt at this technique. After mulling the idea over with my lovely fianc&amp;#232;, &lt;a href=&quot;https://twitter.com/hannahxrene&quot;&gt;Hannah&lt;/a&gt;, she helped me figure out a design that would work and generously drew up the antlers since I can&amp;#39;t illustrate my way out of a wet paper bag. The layering of the transparent antlers being both &amp;quot;below&amp;quot; and &amp;quot;above&amp;quot; the color pulsating band names was something that came out of our brainstorming.&lt;/p&gt;
+
+&lt;p&gt;It took a good amount of guessing and checking, but thanks to &lt;a href=&quot;http://codepen.io/xiwcx/pen/pEgHD?editors=110&quot;&gt;codepen&lt;/a&gt; (where you can check out the unminified, unprocessed code) that process was made much quicker.&lt;/p&gt;
+
+&lt;h2&gt;Selectable text&lt;/h2&gt;
+
+&lt;p&gt;While it might have been slightly more performant to convert the text to outlines I decided to go with SVG &lt;code&gt;&amp;lt;text&amp;gt;&lt;/code&gt; as demonstrated in &lt;a href=&quot;http://css-tricks.com/svg-text-typographic-designs/&quot;&gt;Chris Coyier&amp;#39;s article&lt;/a&gt; on the technique. While it did increase the overall size, I&amp;#39;m not sweating it as the entire thing is &amp;#8776;60K over the wire. The real bonus of doing this is that someone can copy the info right off of the flyer in to their calender or a social platform.&lt;/p&gt;
+
+&lt;h2&gt;Responsive&lt;/h2&gt;
+
+&lt;p&gt;I had read about &lt;a href=&quot;http://timkadlec.com/2013/04/media-queries-within-svg/&quot;&gt;Media Queries Within SVG&lt;/a&gt;, but never had a real world need to try them out until now. The handbill&amp;#39;s details (location, date...) are larger when the handbill renders smaller so that they&amp;#39;ll be legible on small screens and smaller when the handbill renders larger so they have more room to breathe.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass language-sass&quot; data-lang=&quot;sass&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.details&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;.3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;.3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;243&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;419&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;screen&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;min-width&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;50em&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;253&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;459&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;An interesting quirk I found is that SVG won&amp;#39;t rerender when the window resizes, you need to do a full refresh to see the result. Hit me up if I&amp;#39;m wrong or you know a way around this.&lt;/p&gt;
+
+&lt;h2&gt;Sass&lt;/h2&gt;
+
+&lt;p&gt;I wrote up a little chunk of &lt;a href=&quot;http://sass-lang.com/&quot;&gt;Sass&lt;/a&gt; to power the animation so that I could quickly change the number of gradient panels and the length of the entire animation.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass language-sass&quot; data-lang=&quot;sass&quot;&gt;&lt;span class=&quot;na&quot;&gt;$gradient-total&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;$gradient-time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;$gradient-total-time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$gradient-total&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$gradient-time&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;gradient&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;animation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;opacity&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$gradient-total-time&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;infinite&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@for&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;through&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$gradient-total&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;nc&quot;&gt;.gradient--&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;@extend&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;gradient&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;@if&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;animation-delay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$gradient-time&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Downsides&lt;/h2&gt;
+
+&lt;p&gt;There&amp;#39;s really not that many places you can share this. I knew Facebook and Twitter wouldn&amp;#39;t play nice with something like this, but I was disheartened to find that even Tumblr mangles the iframe embed beyond repair. For now this solution will only work if you run your own blog or have access to the source code for your web page.&lt;/p&gt;
+
+&lt;p&gt;Try out the embed code and let me know if and where it works!&lt;/p&gt;
+</description>
+				<pubDate>Mon, 21 Jul 2014 00:00:00 -0400</pubDate>
+				
+        <link>http://xiw.cx/1qx11iZ</link>
+				<guid isPermaLink="true">http://xiw.cx/1qx11iZ</guid>
+			</item>
+		
+			<item>
 				<title>remainder</title>
 				<description>&lt;p&gt;A few years ago some close friends and I started &lt;a href=&quot;remaindersongs.bandcamp.com&quot;&gt;a band named remainder&lt;/a&gt;. We were always spread across two or three cities, but for a good while it was well worth the effort. Eventually we grew tired of the distance and without any real climax the band just petered out.&lt;/p&gt;
 
