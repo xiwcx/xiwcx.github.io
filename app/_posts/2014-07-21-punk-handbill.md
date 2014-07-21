@@ -12,7 +12,7 @@ It's been a while since I've booked a show, but I couldn't pass up the opportuni
   <iframe src="http://welchcanavan.com/dngrs-grf/" frameBorder="0" style="position:absolute;height:100%;left:0;top:0;width:100%">
     <img src="http://welchcanavan.com/dngrs-grf/2014-08-09-dngrs-grf.jpg">
   </iframe>
-  <a href="http://welchcanavan.com/dngrs-grf/2014-08-09-dngrs-grf.jpg" style="position:absolute;height:45%;left:0;top:0;width:100%">&nbsp;</a>
+  <a href="http://xiw.cx/dngrs-grf" style="position:absolute;height:45%;left:0;top:0;width:100%">&nbsp;</a>
 </div>
 
 You can grab the embed code here:
@@ -21,7 +21,7 @@ You can grab the embed code here:
   <iframe src="http://welchcanavan.com/dngrs-grf/" frameBorder="0" style="position:absolute;height:100%;left:0;top:0;width:100%">
     <img src="http://welchcanavan.com/dngrs-grf/2014-08-09-dngrs-grf.jpg">
   </iframe>
-  <a href="http://welchcanavan.com/dngrs-grf/2014-08-09-dngrs-grf.jpg" style="position:absolute;height:45%;left:0;top:0;width:100%">&nbsp;</a>
+  <a href="http://xiw.cx/dngrs-grf" style="position:absolute;height:45%;left:0;top:0;width:100%">&nbsp;</a>
 </div></textarea>
 
 In sci-fi movies animated advertisements are loud and obnoxious, but I wanted to try a subtler effect for my first attempt at this technique. After mulling the idea over with my lovely fianc&#232;, [Hannah](https://twitter.com/hannahxrene), she helped me figure out a design that would work and generously drew up the antlers since I can't illustrate my way out of a wet paper bag. The layering of the transparent antlers being both &#8220;below&#8221; and &#8220;above&#8221; the color pulsating band names was something that came out of our brainstorming.
