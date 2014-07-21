@@ -32,7 +32,7 @@ Sure, the animation could have been done with a GIF, but I think SVG offers some
 
 ## Selectable text
 
-While it might have been slightly more performant to convert the text to outlines I decided to go with SVG `<text>` as demonstrated in [Chris Coyier's article](http://css-tricks.com/svg-text-typographic-designs/) on the technique. While it did increase the overall size, I'm not sweating it as the entire thing is &#8776;60K over the wire. The real bonus of doing this is that someone can copy the info right off of the flyer in to their calender or a social platform.
+While it might have been slightly more performant to convert the text to outlines I decided to go with SVG `<text>` as demonstrated in [Chris Coyier's article](http://css-tricks.com/svg-text-typographic-designs/) on the technique. While it did increase the overall size, I'm not sweating it as the entire thing is &#8776;70K over the wire. The real bonus of doing this is that someone can copy the info right off of the flyer in to their calender or a social platform.
 
 ## Responsiveness
 
