@@ -37,7 +37,7 @@
 
 &lt;h2&gt;Selectable text&lt;/h2&gt;
 
-&lt;p&gt;While it might have been slightly more performant to convert the text to outlines I decided to go with SVG &lt;code&gt;&amp;lt;text&amp;gt;&lt;/code&gt; as demonstrated in &lt;a href=&quot;http://css-tricks.com/svg-text-typographic-designs/&quot;&gt;Chris Coyier&amp;#39;s article&lt;/a&gt; on the technique. While it did increase the overall size, I&amp;#39;m not sweating it as the entire thing is &amp;#8776;60K over the wire. The real bonus of doing this is that someone can copy the info right off of the flyer in to their calender or a social platform.&lt;/p&gt;
+&lt;p&gt;While it might have been slightly more performant to convert the text to outlines I decided to go with SVG &lt;code&gt;&amp;lt;text&amp;gt;&lt;/code&gt; as demonstrated in &lt;a href=&quot;http://css-tricks.com/svg-text-typographic-designs/&quot;&gt;Chris Coyier&amp;#39;s article&lt;/a&gt; on the technique. While it did increase the overall size, I&amp;#39;m not sweating it as the entire thing is &amp;#8776;70K over the wire. The real bonus of doing this is that someone can copy the info right off of the flyer in to their calender or a social platform.&lt;/p&gt;
 
 &lt;h2&gt;Responsiveness&lt;/h2&gt;
 
