@@ -5,3 +5,7 @@
 
 future: false
 show_drafts: false
+
+# Google Analytics UA-ID
+
+ga-ua-id: UA-41030734-1
