@@ -10,7 +10,7 @@
     <link rel="alternate" type="application/rss+xml" title="Welch Canavan » Feed" href="/feed/feed.xml">
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-    <link rel="stylesheet" href="/css/main.9ff4.css"/>
+    <link rel="stylesheet" href="/css/main.be35.css"/>
 
     <script src="/js/main.a52a.js"></script>
   </head>
@@ -46,33 +46,33 @@
 
 <p>It&#39;s been a while since I&#39;ve booked a show, but I couldn&#39;t pass up the opportunity when <a href="http://wearedangers.com">Dangers</a> said they were looking for help with east coast dates. Since it had also been a while since I&#39;d made my own flyer I wanted to try out a technique I&#39;d been contemplating for a while: animated handbills made with <a href="http://en.wikipedia.org/wiki/Scalable_Vector_Graphics">SVG</a>.</p>
 
-<p>
 <div style="height:0;padding-bottom:130%;position:relative;overflow:hidden">
   <iframe src="http://welchcanavan.com/dngrs-grf/" frameBorder="0" style="position:absolute;height:100%;left:0;top:0;width:100%">
-    <p><img src="http://welchcanavan.com/dngrs-grf/2014-08-09-dngrs-grf.jpg"></p>
+    <img src="http://welchcanavan.com/dngrs-grf/2014-08-09-dngrs-grf.jpg">
   </iframe>
   <a href="http://welchcanavan.com/dngrs-grf/2014-08-09-dngrs-grf.jpg" style="position:absolute;height:100%;left:0;top:0;width:100%">&nbsp;</a>
 </div>
-</p>
 
-<p>You can grab the embed text here:</p>
+<p>You can grab the embed code here:</p>
 
 <p><textarea style="resize:none" rows="4" onclick="this.focus();this.select()" wrap="off" readonly="readonly"><div style="height:0;padding-bottom:130%;position:relative;overflow:hidden">
   <iframe src="http://welchcanavan.com/dngrs-grf/" frameBorder="0" style="position:absolute;height:100%;left:0;top:0;width:100%">
-    <p><img src="http://welchcanavan.com/dngrs-grf/2014-08-09-dngrs-grf.jpg"></p>
+    <img src="http://welchcanavan.com/dngrs-grf/2014-08-09-dngrs-grf.jpg">
   </iframe>
   <a href="http://welchcanavan.com/dngrs-grf/2014-08-09-dngrs-grf.jpg" style="position:absolute;height:100%;left:0;top:0;width:100%">&nbsp;</a>
 </div></textarea></p>
 
-<p>In sci-fi movies animated advertisements are loud and obnoxious, but I wanted to try a subtler effect for my first attempt at this technique. After mulling the idea over with my lovely fianc&#232;, <a href="https://twitter.com/hannahxrene">Hannah</a>, she helped me figure out a design that would work and generously drew up the antlers since I can&#39;t illustrate my way out of a wet paper bag. The layering of the transparent antlers being both &quot;below&quot; and &quot;above&quot; the color pulsating band names was something that came out of our brainstorming.</p>
+<p>In sci-fi movies animated advertisements are loud and obnoxious, but I wanted to try a subtler effect for my first attempt at this technique. After mulling the idea over with my lovely fianc&#232;, <a href="https://twitter.com/hannahxrene">Hannah</a>, she helped me figure out a design that would work and generously drew up the antlers since I can&#39;t illustrate my way out of a wet paper bag. The layering of the transparent antlers being both &#8220;below&#8221; and &#8220;above&#8221; the color pulsating band names was something that came out of our brainstorming.</p>
 
-<p>It took a good amount of guessing and checking, but thanks to <a href="http://codepen.io/xiwcx/pen/pEgHD?editors=110">codepen</a> (where you can check out the unminified, unprocessed code) that process was made much quicker.</p>
+<p>It took a good amount of guessing and checking, but thanks to [codepen (where you can check out the unminified, unprocessed code) that process was made much quicker.</p>
+
+<p>Sure, the animation could have been done with a GIF, but I think SVG offers some serious advantages:</p>
 
 <h2>Selectable text</h2>
 
 <p>While it might have been slightly more performant to convert the text to outlines I decided to go with SVG <code>&lt;text&gt;</code> as demonstrated in <a href="http://css-tricks.com/svg-text-typographic-designs/">Chris Coyier&#39;s article</a> on the technique. While it did increase the overall size, I&#39;m not sweating it as the entire thing is &#8776;60K over the wire. The real bonus of doing this is that someone can copy the info right off of the flyer in to their calender or a social platform.</p>
 
-<h2>Responsive</h2>
+<h2>Responsiveness</h2>
 
 <p>I had read about <a href="http://timkadlec.com/2013/04/media-queries-within-svg/">Media Queries Within SVG</a>, but never had a real world need to try them out until now. The handbill&#39;s details (location, date...) are larger when the handbill renders smaller so that they&#39;ll be legible on small screens and smaller when the handbill renders larger so they have more room to breathe.</p>
 <div class="highlight"><pre><code class="sass language-sass" data-lang="sass"><span class="nc">.details</span> <span class="err">{</span>
@@ -85,7 +85,7 @@
 </code></pre></div>
 <p>An interesting quirk I found is that SVG won&#39;t rerender when the window resizes, you need to do a full refresh to see the result. Hit me up if I&#39;m wrong or you know a way around this.</p>
 
-<h2>Sass</h2>
+<h2>Flexibility</h2>
 
 <p>I wrote up a little chunk of <a href="http://sass-lang.com/">Sass</a> to power the animation so that I could quickly change the number of gradient panels and the length of the entire animation.</p>
 <div class="highlight"><pre><code class="sass language-sass" data-lang="sass"><span class="na">$gradient-total</span><span class="o">:</span> <span class="mi">3</span><span class="err">;</span>
@@ -111,7 +111,7 @@
 
 <p>There&#39;s really not that many places you can share this. I knew Facebook and Twitter wouldn&#39;t play nice with something like this, but I was disheartened to find that even Tumblr mangles the iframe embed beyond repair. For now this solution will only work if you run your own blog or have access to the source code for your web page.</p>
 
-<p>Try out the embed code and let me know if and where it works!</p>
+<p>At the moment, this is barely more than a proof of concept. I&#39;d love to see what people do with the concept (especially those with actual design and illustration chops). Try out the embed code and let me know if and where it works!</p>
 
   </main>
   <footer>
