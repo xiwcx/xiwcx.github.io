@@ -142,3 +142,8 @@ figcaption {
   color: $color-quadrary;
   text-align: right;
 }
+
+textarea {
+  @extend %font-mono;
+  width: 100%;
+}
