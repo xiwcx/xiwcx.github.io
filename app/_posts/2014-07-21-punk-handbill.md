@@ -26,7 +26,7 @@ You can grab the embed code here:
 
 In sci-fi movies animated advertisements are loud and obnoxious, but I wanted to try a subtler effect for my first attempt at this technique. After mulling the idea over with my lovely fianc&#232;, [Hannah](https://twitter.com/hannahxrene), she helped me figure out a design that would work and generously drew up the antlers since I can't illustrate my way out of a wet paper bag. The layering of the transparent antlers being both &#8220;below&#8221; and &#8220;above&#8221; the color pulsating band names was something that came out of our brainstorming.
 
-It took a good amount of guessing and checking, but thanks to [codepen (where you can check out the unminified, unprocessed code) that process was made much quicker.
+It took a good amount of guessing and checking, but thanks to [codepen](http://codepen.io/xiwcx/pen/pEgHD?editors=110) (where you can check out the unminified, unprocessed code) that process was made much quicker.
 
 Sure, the animation could have been done with a GIF, but I think SVG offers some serious advantages:
 
