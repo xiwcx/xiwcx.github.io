@@ -3,6 +3,7 @@
 }
 
 .post-body {
+  > div,
   > p,
   > ul,
   > ol,
@@ -11,6 +12,7 @@
   > video,
   > audio,
   > figure,
+  > textarea
   pre {
     margin-bottom: $ms-default !important; //override embed inline style
   }
