@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Punk Handbill for the Twenty-first Century"
+title: "A Punk Handbill for the Twenty-first Century with SVG"
 categories: tech
 ---
 
