@@ -71,7 +71,7 @@ $sizes: (
 );
 
 @each $name, $size in $sizes {
-  %font-size-{$name} {
+  %font-size-#{$name} {
     @include adjust-font-size-to( nth($size, 2) );
 
     @include breakpoint($bp-sm) {
