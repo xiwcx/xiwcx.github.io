@@ -96,7 +96,7 @@
 <span class="p">);</span>
 
 <span class="k">@each</span> <span class="err">$</span><span class="nt">name</span><span class="o">,</span> <span class="err">$</span><span class="nt">size</span> <span class="nt">in</span> <span class="err">$</span><span class="nt">sizes</span> <span class="p">{</span>
-  <span class="err">%</span><span class="nt">font-size-</span><span class="p">{</span><span class="err">$</span><span class="nt">name</span><span class="p">}</span> <span class="p">{</span>
+  <span class="err">%</span><span class="nt">font-size-</span><span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">name</span><span class="p">}</span> <span class="p">{</span>
     <span class="k">@include</span><span class="nd"> adjust-font-size-to</span><span class="p">(</span> <span class="nf">nth</span><span class="p">(</span><span class="nv">$size</span><span class="o">,</span> <span class="mi">2</span><span class="p">)</span> <span class="p">);</span>
 
     <span class="k">@include</span><span class="nd"> breakpoint</span><span class="p">(</span><span class="nv">$bp-sm</span><span class="p">)</span> <span class="p">{</span>
