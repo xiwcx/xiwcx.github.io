@@ -26,4 +26,30 @@
     max-width: 100% !important;
     width: 100% !important;
   }
+
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    position: relative;
+
+    &:hover {
+      .anchor {
+        color: darken( $color-lowlight, 30% );
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.anchor {
+  color: darken( $color-lowlight, 15% );
+  position: absolute;
+  right: 100%;
+  margin-right: .125em;
+
+  @media #{$mq-med} {
+    margin-right: .25em;
+  }
 }
