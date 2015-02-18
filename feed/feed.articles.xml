@@ -8,6 +8,21 @@
 		
 			
 			<item>
+				<title>Sass Bites Interview</title>
+				<description>&lt;p&gt;&lt;a href=&quot;https://twitter.com/micahgodbolt&quot;&gt;Micah Godbolt&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/elyseholladay&quot;&gt;Elyse Holloday&lt;/a&gt; were kind enough to have me as one of their guest on &lt;a href=&quot;https://www.youtube.com/user/sassbites&quot;&gt;Sass Bites&lt;/a&gt; in a series about &lt;a href=&quot;https://github.com/micahgodbolt/front-end-architecture&quot;&gt;Front End Architecture&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I had a blast and the resulting conversation can be viewed here:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/YoriXiaviCE&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+</description>
+				<pubDate>Wed, 18 Feb 2015 00:00:00 -0500</pubDate>
+				<link>http://welchcanavan.com/sass-bites-interview/</link>
+				<guid isPermaLink="true">http://welchcanavan.com/sass-bites-interview/</guid>
+			</item>
+			
+		
+			
+			<item>
 				<title>A Punk Handbill for the Twenty-first Century with SVG</title>
 				<description>&lt;p&gt;Making fliers for my high school punk bands is probably the first step I took on the path to becoming a web developer. Since it was the early two thousands I pieced together a working knowledge of photoshop instead of cutting up my parent&amp;#39;s magazines. I really enjoyed being self sufficient so when it came time to make the bands&amp;#39; websites I struggled through figuring that out as well.&lt;/p&gt;
 
