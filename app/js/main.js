@@ -1,6 +1,12 @@
-$( ".post-body h2, .post-body h3, .post-body h4, .post-body h5, .post-body h6" )
+/* global $ */
+
+// init anchorify
+$( '.post-body h2, .post-body h3, .post-body h4, .post-body h5, .post-body h6' )
   .anchorify({
-    text: "#",
-    cssClass: "anchor",
-    position: "prepend"
+    text: '#',
+    cssClass: 'anchor',
+    position: 'prepend'
   });
+
+// init fitvids
+$('.post-body').fitVids();

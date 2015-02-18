@@ -21,5 +21,8 @@
     "fitvids": "~1.1.0",
     "fluidity": "git@github.com:mrmrs/fluidity.git#~0.2.0",
     "anchorify": "~1.1.4"
+  },
+  "devDependencies": {
+    "fitvids": "~1.1.0"
   }
 }
