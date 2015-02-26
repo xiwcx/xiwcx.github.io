@@ -1,0 +1,67 @@
+==================================================================
+https://keybase.io/xiwcx
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://welchcanavan.com
+  * I am xiwcx (https://keybase.io/xiwcx) on keybase.
+  * I have a public key with fingerprint E736 2FF5 D21D 19CC 9823  ACF5 C9B0 975F 4D11 D200
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "e7362ff5d21d19cc9823acf5c9b0975f4d11d200",
+            "host": "keybase.io",
+            "key_id": "c9b0975f4d11d200",
+            "kid": "01014dcada5fc7062638700956fe5ed2259970b11b8687aeb76052663b8e3d943d9e0a",
+            "uid": "6a1c17a26a8521e9eacdeba295ac5919",
+            "username": "xiwcx"
+        },
+        "service": {
+            "hostname": "welchcanavan.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1424917567,
+    "expire_in": 157680000,
+    "prev": "ff5aadbf99ae3da6506c0f2b70d8413293302fa39c270cc1278dfc46f4b7a2a0",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.7
+Comment: https://keybase.io/crypto
+
+yMIiAnicbVJbSFRBGF7d7GJuCKUUFeWBiMBqZs51tkjTjEoi07KyyzZnzpz1pJ6z
+7a7rDaEHK2SFrIiK7CEz9CGptogiJLUbGEWSQSxUEHShzHoIo3qoOVZvDQzD/P/3
+fTPfx3/X5/Wkp3QIs77fGmv3pTwcWF3r2TLWktck6I7RIPibhCo2cZiWHWThUNiy
+o4JfYKqoINOUDQQNiCnFGhIJNWWKdYBV2ZQMCA0EgJArVDoRl8FldBJhyyyH1/gl
+YBm8+h981UQDQAAlgxKDyCZVgYIUUVMBwLJiMpkZCMkYq0CHUNcUTSVMVxUgI0UR
+dY2JBpb4ZoBwudoJOYVAClWCFKLJCDLMCDWYThCWCZUxxC4wwsI2qWEcXW/V0Xqh
+OVfgpZhFmevftfG3XceqaSUlNokRexl1ajg5FHaiDnWqebcyGg35XXK0IfQHrQf+
+6gR0yzZ4jpwQY+GI5diCH3IkjVquMJSQhKEqK2quwOpDVpgFLBchq4oG+HKfYTEu
+yYMnxNBNjAk3SxQZKBSYSFeBoUlQRFgUATKJiClSAaUQqZphUkkxJZ1nQNyUI2y/
+7Qh+iX+TBLlkxAraJFobZkLzYP+uSZ6UdM/ktFR3Ejzp0zL/zceCi1N+2bjlVevp
+tuxB4fHYxq7+ssyv6+Y+gjOH1h7dkJ3V/Lp46eSKezN2bt+b39OmJ8p3PrjS4O3L
+H01Pnj5v5QSrxzXf3K6mRXcW96UFG2M/e4rKMzyJMvptdLzuVmZpwcd4/IeZfDLn
+ZMdTT5bvcu+US+0fPp9R3w1Yqa3Nyw/veF5aeOJ5zpJTx1fdHI4nHPRmaOaF+Mbp
+dZ0NBz9tHdk8OHtbRfdUWnDja/HlJ4dWNj7bdN37ovvtl3kV9wc+79537sSG3deO
+lRwoPfKr0Lsr3rhGztAWHu0tv+M8SgZTuwbwikSs9H0i+/b9zGCyU9rTHp+Xd/ZU
+8fz1M65cHY5klIzcLHr54jehOyY/
+=vX4I
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/xiwcx
+
+==================================================================
