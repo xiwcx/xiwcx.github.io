@@ -82,7 +82,7 @@ I ended up using Hologram because of my task at hand (documenting a design that 
 [Hologram]: http://trulia.github.io/hologram/
 [Nicole Sullivan]: http://www.stubbornella.org/
 [Trulia]: https://github.com/trulia
-[on github]: https://github.com/natgeo/mortar/blob/develop/gruntfile.coffee
+[on github]: https://github.com/natgeo/mortar/blob/master/gruntfile.coffee
 [widest variety]: https://github.com/trulia/hologram#supported-preprocessorsfile-types
 [2]: https://github.com/trulia/hologram#document-yaml-section
 [Jekyll Front-matter]: http://jekyllrb.com/docs/frontmatter/
