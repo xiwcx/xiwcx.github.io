@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post.hbs
 title:  "Developing Locally with Typekit, Xip.io, and Browsersync"
 categories: tech
 ---

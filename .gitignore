@@ -39,4 +39,4 @@ node_modules
 .tmp
 
 # Ignore because it contains an API key
-_config.yml
+build

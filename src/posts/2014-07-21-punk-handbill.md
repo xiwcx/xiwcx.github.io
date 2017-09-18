@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post.hbs
 title: "A Punk Handbill for the Twenty-first Century with SVG"
 categories: tech
 ---

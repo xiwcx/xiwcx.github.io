@@ -3,18 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ page.title }} | {{ site.author.name }}</title>
+    <title>{{ title }} | {{ siteName }}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="alternate" type="application/rss+xml" title="{{site.author.name}} » Feed" href="/feed/feed.xml">
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-    <!-- build:css({app,.tmp}) /css/main.css -->
-    <link rel="stylesheet" href="/_bower_components/html5-boilerplate/css/main.css">
-    <link rel="stylesheet" href="/_bower_components/fluidity/css/fluidity.css">
     <link rel="stylesheet" href="/css/main.css">
-    <!-- endbuild -->
   </head>
   <body>
   <body>
@@ -26,7 +22,7 @@
       <nav class="nav-container mainheader-nav" role="navigation">
       <a class="nav-item" href="/">
         <div class="logo-container">
-          {% include logo.html %}
+          {{> logo }}
         </div>
         <h1 class="logo-text h6">I. Welch Canavan</h1>
       </a>
@@ -36,7 +32,29 @@
       </nav>
     </header>
 
-    <main class="centercolumn">{{ content }}</main>
+    <main class="centercolumn">
+        {{#each collections.posts}}
+          <article class="preview-container">
+            <header class="preview-header">
+              <h2>
+                <a href="{{ this.url }}">
+                  {{ this.title }}
+                </a>
+              </h2>
+            </header>
+
+            <p>
+              {{ this.content }}
+
+              <a href="{{ this.url }}">
+                read more
+              </a>
+            </p>
+          </article>
+        {{/each}}
+
+        {{{ contents }}}
+    </main>
 
     <footer class="mainfooter centercolumn background--lowlight">
       <p>You can find me on <a href="http://flickr.com/photos/xiwcx">Flickr</a>, <a href="https://github.com/xiwcx">Github</a>, <a href="https://plus.google.com/105154742602740952287?rel=author">Google+</a>, and <a href="https://twitter.com/xiwcx">Twitter</a>. You can subscribe to this blog using <a href="/feed/feed.xml">RSS</a>.</p>
@@ -44,8 +62,6 @@
       <p><small>Content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</small></p>
     </footer>
 
-    {% include scripts.html %}
-    {% include googleanalytics.html %}
-
+    {{> scripts }}
   </body>
 </html>

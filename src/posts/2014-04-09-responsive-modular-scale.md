@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post.hbs
 title:  "Responsive Typographic Modular Scale with Sass"
 categories: tech
 ---
