@@ -24,12 +24,22 @@ gulp.task('build', function() {
     .destination('../../build')
     .clean(true)
     .use(collections({
-      posts: '../../src/posts/*.md'
+      posts:{
+        pattern: 'posts/*.md',
+        sortBy: 'date',
+        reverse: true
+      }
     }))
     .use(markdown())
     .use(permalinks({
-      relative: false
-    }))
+        linksets: [
+          {
+            match: { collection: 'posts' },
+            pattern: ':slug'
+          }
+        ]
+      })
+    )
     .use(layouts({
       directory: "../../src/layouts",
       engine: 'handlebars',

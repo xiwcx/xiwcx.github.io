@@ -1,7 +1,8 @@
 ---
 layout: post.hbs
 title:  "Developing Locally with Typekit, Xip.io, and Browsersync"
-categories: tech
+date: 2014-03-23
+slug: developing-locally-with-typekit-and-xip
 ---
 
 Recently I ran in to an interesting problem. When you initialize a new "kit" on [typekit][] you are prompted to enter a list of domains that your kit will be allowed to function properly on. Typically you would enter the address of your live site (e.g. ```'http://example.com'```) as well as an address for local testing (e.g. ```'192.168.1.10'``` or ```'localhost'```). Neither of these options for local development worked for me. Managing a list of <abbr title="Local Area Network">[LAN][]</abbr> addresses would be foolish (and probably impossible) on a large team where people are working from different locations. Simply stating ```localhost``` would prevent fonts from being previewed on other devices with a tool like [BrowserSync][], [Ghostlab][], or [Adobe Edge Inspect][] which all rely on your computer's LAN address.

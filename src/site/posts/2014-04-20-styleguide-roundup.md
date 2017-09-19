@@ -1,7 +1,8 @@
 ---
 layout: post.hbs
 title:  "Styleguide Generator Roundup"
-categories: tech
+date: 2014-04-20
+slug: styleguide-roundup
 ---
 
 Styleguides for websites are by no means a [new idea], but they are more easily talked about than implemented, which is why people are [still advocating][1] for them.

@@ -1,7 +1,8 @@
 ---
 layout: post.hbs
 title: "remainder"
-categories: tech
+date: 2014-07-12
+slug: remainder
 ---
 
 A few years ago some close friends and I started [a band named remainder](remaindersongs.bandcamp.com). We were always spread across two or three cities, but for a good while it was well worth the effort. Eventually we grew tired of the distance and without any real climax the band just petered out.

@@ -1,7 +1,8 @@
 ---
 layout: post.hbs
 title: "A Punk Handbill for the Twenty-first Century with SVG"
-categories: tech
+date: 2014-07-21
+slug: punk-handbill
 ---
 
 Making fliers for my high school punk bands is probably the first step I took on the path to becoming a web developer. Since it was the early two thousands I pieced together a working knowledge of photoshop instead of cutting up my parent's magazines. I really enjoyed being self sufficient so when it came time to make the bands' websites I struggled through figuring that out as well.

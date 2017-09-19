@@ -1,7 +1,8 @@
 ---
 layout: post.hbs
 title:  "Responsive Typographic Modular Scale with Sass"
-categories: tech
+date: 2014-04-09
+slug: responsive-modular-scale
 ---
 
 I was relieved when I first came across [Tim Brown]'s [talk] on typographic modular scale and his [accompanying tool]. For a non-designer like me, it takes the guess work out of deciding upon font sizes. [Team Sass]'s [sass plugin] makes using a modular scale even easier.
