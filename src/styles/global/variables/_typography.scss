@@ -4,11 +4,7 @@ $font-headings: "proxima-nova", sans-serif;
 // $font-mono: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
 $font-mono: Monaco, Consolas, "Lucida Console", monospace;
 
-// MS Settings
-@import "modular-scale";
-
 $ms-base: 16px; // don't worry, it gets converted to ems
-$ms-ratio: $fifth;
 
 // Default Variables
 $ms-sm       : $ms-base * .75;
@@ -18,21 +14,12 @@ $ms-lrg      : $ms-base * 1.5;
 $ms-xlrg     : $ms-base * 1.75;
 $ms-xxlrg    : $ms-base * 2.5;
 
-// Small Screen Variables
-$ms-smscr-ratio: $minor-third;
-
-$ms-smscr-sm       : ms(2, $ms-base, $ms-smscr-ratio);
+$ms-smscr-sm       : 14px;
 $ms-smscr-norm     : $ms-base;
-$ms-smscr-med      : ms(2, $ms-base, $ms-smscr-ratio);
-$ms-smscr-lrg      : ms(3, $ms-base, $ms-smscr-ratio);
-$ms-smscr-xlrg     : ms(4, $ms-base, $ms-smscr-ratio);
-$ms-smscr-xxlrg    : ms(5, $ms-base, $ms-smscr-ratio);
-
-// Vertical Rhythm Settings
-@import "compass/typography/vertical_rhythm";
-
-$base-font-size: $ms-base;
-$base-line-height: 1.5;
+$ms-smscr-med      : 18px;
+$ms-smscr-lrg      : 20px;
+$ms-smscr-xlrg     : 22px;
+$ms-smscr-xxlrg    : 24px;
 
 $ms-default    : 1.5em;
 $ms-quarter    : $ms-default / 4;

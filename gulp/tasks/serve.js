@@ -5,25 +5,27 @@ const config = require('../config');
 const gulp = require('gulp');
 
 // Static server
-gulp.task('serve', ['clean', 'scripts', 'styles'], function() {
+gulp.task('serve', ['clean', 'build', 'styles'], function() {
   bs.init({
     open: 'external',
     port: 3001,
     xip: true,
     server: {
       baseDir: [
-        config.rootDir,
+        config.buildDir,
         config.tmpDir
       ]
     }
   });
 
   // watch source files
-  bs.watch(config.rootDir + 'index.html', bs.reload);
-  bs.watch(config.scriptsCompiledDir, bs.reload);
-  gulp.watch(config.scriptsSrcDir + '**/*.js', ['scripts']);
+  gulp.watch(config.rootDir + '**/*.md', ['build']);
+  gulp.watch(config.srcDir + 'layouts/**/*.hbs', ['build']);
+  gulp.watch(config.srcDir + 'partials/**/*.hbs', ['build']);
+  // bs.watch(config.scriptsCompiledDir, bs.reload);
+  // gulp.watch(config.scriptsSrcDir + '**/*.js', ['scripts']);
   gulp.watch(config.stylesSrcDir + '**/*.scss', ['styles']);
 
   // watch compiled files
-  bs.watch(config.tmpDir).on('change', bs.reload);
+  bs.watch(config.buildDir).on('change', bs.reload);
 });

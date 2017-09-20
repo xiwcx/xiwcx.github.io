@@ -1,7 +1,8 @@
 module.exports = {
-  rootDir: './',
+  rootDir: './src/site/',
+  srcDir: './src/',
 
-  // script paths
+  // style paths
   stylesCompiled: './.tmp/styles/main.css',
   stylesCompiledDir: './.tmp/styles/',
   stylesSrc: './src/styles/main.scss',
