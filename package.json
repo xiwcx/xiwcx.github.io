@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/xiwcx/xiwcx.github.io#readme",
   "dependencies": {
+    "bitly": "^4.1.1",
     "browser-sync": "^2.18.13",
     "del": "^3.0.0",
     "gulp": "^3.9.1",

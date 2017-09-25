@@ -1,6 +1,6 @@
 'use strict';
 
-const autoprefixer = require('gulp-autoprefixer');
+const bitly = require('metalsmith-bitly');
 const bs = require('browser-sync').get('devServer');
 const config = require('../config');
 const collections = require('metalsmith-collections');
@@ -13,18 +13,18 @@ const permalinks  = require('metalsmith-permalinks');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('build', function() {
+gulp.task('build', () => {
   return Metalsmith(__dirname)
     .metadata({
       siteName: 'Welch Canavan: UX Developer',
-      siteUrl: 'http://welchcanavan.com/',
+      siteURL: 'http://welchcanavan.com/',
       GA: 'UA-41030734-1',
     })
     .source('../../src/site')
     .destination('../../build')
     .clean(true)
     .use(collections({
-      posts:{
+      posts: {
         pattern: 'posts/*.md',
         sortBy: 'date',
         reverse: true
@@ -32,14 +32,19 @@ gulp.task('build', function() {
     }))
     .use(markdown())
     .use(permalinks({
-        linksets: [
-          {
-            match: { collection: 'posts' },
-            pattern: ':slug'
-          }
-        ]
-      })
+      linksets: [
+        {
+          match: { collection: 'posts' },
+          pattern: ':slug'
+        }
+      ]})
     )
+    .use(bitly({
+      accessToken: config.bitlyToken,
+      baseURLGlobalMetadataKey: 'siteURL',
+      brandedShortDomain: 'http://xiw.cx/',
+      pathMetadataKey: 'slug',
+    }))
     .use(layouts({
       directory: "../../src/layouts",
       engine: 'handlebars',
@@ -50,13 +55,3 @@ gulp.task('build', function() {
       if (err) throw err;
   });
 });
-
-// gulp.task('build', function() {
-//   return gulp.src(config.stylesSrc)
-//     .pipe(sourcemaps.init())
-//       .pipe(sass().on('error', sass.logError))
-//       .pipe(autoprefixer())
-//     .pipe(sourcemaps.write())
-//     .pipe(gulp.dest(config.stylesCompiledDir))
-//     .pipe(bs.stream({once: true}));
-// });

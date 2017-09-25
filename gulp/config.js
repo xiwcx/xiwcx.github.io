@@ -1,4 +1,6 @@
-module.exports = {
+const configPrivate = require('./config.private');
+
+config = {
   rootDir: './src/site/',
   srcDir: './src/',
 
@@ -10,4 +12,6 @@ module.exports = {
 
   buildDir: './build/',
   tmpDir: './.tmp/',
-}
+};
+
+module.exports = Object.assign(config, configPrivate);
