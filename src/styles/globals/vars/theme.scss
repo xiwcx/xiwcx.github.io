@@ -1,0 +1,4 @@
+$color-primary: hsl(211, 100%, 57%);
+$color-secondary: #b6ff00;
+$color-lowlight: mix($color-primary, hsla(0, 0%, 90%, .9), 10);
+$color-text: mix($color-primary, hsla(0, 0%, 10%, .9), 10);

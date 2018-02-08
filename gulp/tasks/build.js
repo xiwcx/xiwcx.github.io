@@ -4,10 +4,12 @@ const bitly = require('metalsmith-bitly');
 const bs = require('browser-sync').get('devServer');
 const config = require('../config');
 const collections = require('metalsmith-collections');
+const dateFormatter = require('metalsmith-date-formatter');
 const gulp = require('gulp');
 const handlebars = require('handlebars');
 const layouts = require('metalsmith-layouts');
 const markdown = require('metalsmith-markdown');
+const metallic = require('metalsmith-metallic');
 const Metalsmith = require('metalsmith');
 const permalinks  = require('metalsmith-permalinks');
 const sass = require('gulp-sass');
@@ -30,7 +32,16 @@ gulp.task('build', () => {
         reverse: true
       }
     }))
+    .use(metallic())
     .use(markdown())
+    .use(dateFormatter({
+      dates: [
+        {
+          key: 'date',
+          format: 'M/D/YY'
+        }
+      ]})
+    )
     .use(permalinks({
       linksets: [
         {

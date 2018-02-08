@@ -1,0 +1,74 @@
+.hljs {
+    overflow-x: auto;
+
+    &-subst {
+        color: #444;
+    }
+
+    &-comment {
+        color: #888888;
+    }
+
+    &-keyword,
+    &-attribute,
+    &-selector-tag,
+    &-meta-keyword,
+    &-doctag,
+    &-name {
+        font-weight: bold;
+    }
+
+    &-type,
+    &-string,
+    &-number,
+    &-selector-id,
+    &-selector-class,
+    &-quote,
+    &-template-tag,
+    &-deletion {
+        color: hsl(360, 100%, 57%);
+    }
+
+    &-title,
+    &-section {
+        color: hsl(360, 100%, 57%);
+        font-weight: bold;
+    }
+
+    &-regexp,
+    &-symbol,
+    &-variable,
+    &-template-variable,
+    &-link,
+    &-selector-attr,
+    &-selector-pseudo {
+        color: hsl(11, 100%, 57%);
+    }
+
+    &-literal {
+        color: $color-secondary;
+    }
+
+    &-built_in,
+    &-bullet,
+    &-code,
+    &-addition {
+        color: hsl(115, 100%, 57%);
+    }
+
+    &-meta {
+        color: $color-primary;
+    }
+
+    &-meta-string {
+        color: hsl(186, 100%, 57%);
+    }
+
+    &-emphasis {
+        font-style: italic;
+    }
+
+    &-strong {
+        font-weight: bold;
+    }
+}

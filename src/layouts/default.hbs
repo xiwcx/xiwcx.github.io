@@ -2,27 +2,18 @@
   {{#if contents}}
     {{{ contents }}}
   {{else}}
-    a list of articles
-
     {{#each collections.posts}}
-      <article class="preview-container">
-        <header class="preview-header">
-          <h2>
-            <a href="/{{ this.slug }}">
-              {{ this.title }}
-            </a>
-          </h2>
-          <h3>
-            bitly link: {{ this.bitlyURL }}
-          </h3>
-        </header>
+      <ul>
+        <a href="/{{ this.slug }}">
+          <p>
+            {{ this.title }}
+          </p>
 
-        <p>
-          <a href="/{{ this.slug }}">
-            read more
-          </a>
-        </p>
-      </article>
+          <p>
+            {{ this.date }}
+          </p>
+        </a>
+      </ul>
     {{/each}}
   {{/if}}
 {{> footer }}

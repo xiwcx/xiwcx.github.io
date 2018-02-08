@@ -1,27 +1,7 @@
-@import "global/variables/colors";
-@import "global/variables/layout";
-@import "global/variables/mqs";
-@import "global/variables/theme";
-@import "global/variables/typography";
+@import 'globals/vars/theme';
 
-@import "global/extends/typography";
+@import 'base';
 
-@import "base";
+@import 'utils/visually-hidden';
 
-@import "theme/backgrounds";
-@import "theme/box";
-@import "theme/end";
-@import "theme/img";
-@import "theme/logo";
-
-@import "typography/headings";
-
-@import "blocks/mainfooter";
-@import "blocks/mainheader";
-@import "blocks/nav";
-@import "blocks/post";
-@import "blocks/preview";
-
-@import "layout/centercolumn";
-
-@import "pygments"
+@import 'components/logo';

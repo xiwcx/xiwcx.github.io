@@ -1,0 +1,57 @@
+.logo {
+  align-items: center;
+  display: grid;
+  justify-items: center;
+  grid-template-areas: "a";
+  height: 20vh;
+  width: 20vw;
+}
+
+.logo-1 {
+  fill: hsla(0, 0%, 0%, .3);
+  transition: fill .25s ease-in-out;
+  will-change: fill;
+
+  .logo:hover & {
+    fill: hsla(0, 0%, 0%, .4);
+  }
+}
+
+.logo-2 {
+  fill: url(#logo-gradient);
+}
+
+.logo-3 {
+  fill: url(#glimmer);
+}
+
+.logo-container {
+  align-self: center;
+  grid-area: a;
+  transition: width .25s ease-in-out;
+  width: 90%;
+  will-change: width;
+
+  .logo:hover & {
+    width: 100%;
+  }
+
+  &--shadow {
+    filter: blur(.25em);
+    transition: width .25s ease-in-out, filter .25s ease-in;
+    will-change: filter, width;
+    z-index: -1;
+
+    .logo:hover & {
+      filter: blur(.5em);
+    }
+  }
+}
+
+.stop-0 {
+  stop-color: #b6ff00;
+}
+
+.stop-1 {
+  stop-color: #228dff;
+}
