@@ -1,8 +1,18 @@
 @import url("https://use.typekit.net/bkt7zhk.css");
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   color: $color-text;
-  font-family: "lato", sans-serif;
+  font-family: $type-base;
   font-size: 110%;
 
   @supports (font-display: auto) {
@@ -18,7 +28,7 @@ a {
 code {
   background-color: $color-lowlight;
   border-radius: .25em;
-  font-family: "roboto-mono", monospace;
+  font-family: $type-code;
   font-size: .8em;
   padding: 0 .25em;
 
@@ -26,11 +36,6 @@ code {
     display: block;
     padding: 1em;
   }
-}
-
-body > main {
-  margin: 0 auto;
-  max-width: 30em;
 }
 
 img {
@@ -47,7 +52,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "omnes-pro";
+  font-family: $type-heading;
   font-size: 2.5em;
   line-height: 1.1;
   font-weight: 600;

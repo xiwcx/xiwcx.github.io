@@ -2,18 +2,21 @@
   {{#if contents}}
     {{{ contents }}}
   {{else}}
-    {{#each collections.posts}}
-      <ul>
-        <a href="/{{ this.slug }}">
-          <p>
-            {{ this.title }}
-          </p>
+    <img src="img/me.png" alt="">
+    <ul class="article-list">
+      {{#each collections.posts}}
+        <li class="article-list__article{{#if @first}} article-list__article--first{{/if}}">
+          <a class="article-list__target" href="/{{ this.slug }}">
+            <p>
+              {{ this.title }}
+            </p>
 
-          <p>
-            {{ this.date }}
-          </p>
-        </a>
-      </ul>
-    {{/each}}
+            <p>
+              {{ this.date }}
+            </p>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
   {{/if}}
 {{> footer }}

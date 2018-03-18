@@ -2,3 +2,8 @@ $color-primary: hsl(211, 100%, 57%);
 $color-secondary: #b6ff00;
 $color-lowlight: mix($color-primary, hsla(0, 0%, 90%, .9), 10);
 $color-text: mix($color-primary, hsla(0, 0%, 10%, .9), 10);
+$color-inverse: hsl(0, 0%, 100%);
+
+$type-base: "lato", sans-serif;
+$type-heading: "omnes-pro", sans-serif;
+$type-code: "roboto-mono", monospace;
