@@ -1,5 +1,4 @@
 ---
-layout: post.hbs
 title:  "Styleguide Generator Roundup"
 date: 2014-04-20
 slug: styleguide-roundup

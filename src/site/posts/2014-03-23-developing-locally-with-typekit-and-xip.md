@@ -1,5 +1,4 @@
 ---
-layout: post.hbs
 title:  "Developing Locally with Typekit, Xip.io, and Browsersync"
 date: 2014-03-23
 slug: developing-locally-with-typekit-and-xip

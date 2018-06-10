@@ -1,0 +1,15 @@
+---
+layout: default.njk
+title: Home
+---
+
+<main>
+    <p>I'm a web developer who enjoys focusing on the intersection of code and people. Currently, enjoying the challenges at <a href="https://www.marianatek.com/">Mariana Tek</a></p>
+    <p>Blerg</p>
+</main>
+
+<ul>
+    {% for post in posts %}
+        <li><a href="{{ post.path }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>

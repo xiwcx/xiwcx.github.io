@@ -1,5 +1,4 @@
 ---
-layout: post.hbs
 title:  "Responsive Typographic Modular Scale with Sass"
 date: 2014-04-09
 slug: responsive-modular-scale

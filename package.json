@@ -4,10 +4,10 @@
   "description": "This is the source for [welchcanavan.com](http://welchcanavan.com/)",
   "main": "index.js",
   "scripts": {
-    "clean": "gulp clean",
-    "build": "gulp build",
-    "serve": "gulp serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node index.js",
+    "clean": "rimraf build",
+    "dev": "node index.js dev",
+    "prod": "node index.js prod"
   },
   "repository": {
     "type": "git",
@@ -22,21 +22,20 @@
   "homepage": "https://github.com/xiwcx/xiwcx.github.io#readme",
   "dependencies": {
     "bitly": "^4.1.1",
-    "browser-sync": "^2.18.13",
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.1",
-    "handlebars": "^4.0.10",
+    "jstransformer-nunjucks": "^0.5.0",
     "metalsmith": "^2.3.0",
     "metalsmith-bitly": "^1.0.1",
+    "metalsmith-browser-sync": "^1.1.1",
     "metalsmith-collections": "^0.9.0",
     "metalsmith-date-formatter": "^1.0.2",
-    "metalsmith-layouts": "^1.8.1",
-    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-html-minifier": "^3.0.0",
+    "metalsmith-if": "^0.1.1",
+    "metalsmith-in-place": "^4.1.1",
+    "metalsmith-layouts": "^2.1.0",
+    "metalsmith-markdown": "^0.2.2",
     "metalsmith-metallic": "^2.0.2",
     "metalsmith-permalinks": "^0.5.0",
-    "require-dir": "^0.3.2"
+    "metalsmith-watch": "^1.0.3",
+    "rimraf": "^2.6.2"
   }
 }

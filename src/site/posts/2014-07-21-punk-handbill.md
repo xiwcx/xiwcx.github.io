@@ -1,5 +1,4 @@
 ---
-layout: post.hbs
 title: "A Punk Handbill for the Twenty-first Century with SVG"
 date: 2014-07-21
 slug: punk-handbill

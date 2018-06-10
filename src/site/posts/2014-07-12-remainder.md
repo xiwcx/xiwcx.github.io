@@ -1,5 +1,4 @@
 ---
-layout: post.hbs
 title: "remainder"
 date: 2014-07-12
 slug: remainder

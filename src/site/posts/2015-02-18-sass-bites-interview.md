@@ -1,5 +1,5 @@
 ---
-layout: post.hbs
+layout: default.njk
 title: "Sass Bites Interview"
 date: 2015-02-18
 slug: sass-bites-interview
