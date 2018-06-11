@@ -1,15 +1,52 @@
 ---
-layout: default.njk
 title: Home
 ---
 
 <main>
     <p>I'm a web developer who enjoys focusing on the intersection of code and people. Currently, enjoying the challenges at <a href="https://www.marianatek.com/">Mariana Tek</a></p>
-    <p>Blerg</p>
 </main>
 
-<ul>
-    {% for post in posts %}
-        <li><a href="{{ post.path }}">{{ post.title }}</a></li>
-    {% endfor %}
-</ul>
+<aside>
+    <ul>
+        <li>
+            <a href="https://twitter.com/xiwcx">Twitter</a>
+        </li>
+        <li>
+            <a href="https://github.com/xiwcx">Github</a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/welchcanavan/">LinkedIn</a>
+        </li>
+        <li>
+            <a href="mailto:welch.canavan@gmail.com">Email</a>
+        </li>
+    </ul>
+</aside>
+
+<aside>
+    <h1>
+        Work
+    </h1>
+
+    <ul>
+        {% for work in works %}
+            <li>
+                <a href="{{ work.slug }}">{{ work.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</aside>
+
+<aside>
+    <h1>
+        Writing
+    </h1>
+
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{{ post.slug }}">{{ post.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</aside>

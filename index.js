@@ -4,8 +4,10 @@ const htmlMinifier = require('metalsmith-html-minifier');
 const inPlace = require('metalsmith-in-place');
 const layouts = require('metalsmith-layouts');
 const markdown = require('metalsmith-markdown');
+const metallic = require('metalsmith-metallic');
 const Metalsmith = require('metalsmith');
 const msIf = require('metalsmith-if');
+const permalinks = require('metalsmith-permalinks');
 const watch = require('metalsmith-watch');
 
 const isDevBuild = process.argv[2] === 'dev';
@@ -23,14 +25,28 @@ Metalsmith(__dirname)
             pattern: 'posts/**/*.md',
             sortBy: 'date',
             reverse: true
-        }
+        },
+        works: 'work/**/*.md'
     }))
+    .use(metallic())
     .use(markdown())
     .use(layouts({
         default: 'default.njk',
         engine: 'nunjucks'
     }))
     .use(inPlace())
+    .use(permalinks({
+        linksets: [
+            {
+                match: { collection: 'posts' },
+                pattern: ':slug'
+            },
+            {
+                match: { collection: 'works' },
+                pattern: ':slug'
+            }
+        ]
+    }))
 
     // development specific tasks
     .use(msIf(

@@ -32,12 +32,10 @@ Thumbs.db
 *.tar
 *.zip
 
-# Ignore for Yeoman-Jekyll projects #
-app/_bower_components
-dist
+# Ignore node things
+.env
 node_modules
 .tmp
 
 # Ignore because it contains an API key
 build
-gulp/config.private.js
