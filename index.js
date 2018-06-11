@@ -15,9 +15,9 @@ const isProdBuild = process.argv[2] === 'prod'
 
 Metalsmith(__dirname)
   .metadata({
-    siteName: 'Welch Canavan: UX Developer',
-    siteURL: 'http://welchcanavan.com/',
-    GA: 'UA-41030734-1'
+    isDevBuild,
+    isProdBuild,
+    siteName: 'Welch Canavan: UX Developer'
   })
   .source('./src/site')
   .use(collections({
