@@ -1,0 +1,25 @@
+{% extends "base.njk" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/atelier-sulphurpool-dark.min.css">
+{% endblock %}
+
+{% block body %}
+    <header class="" role="banner">
+      <nav class="" role="navigation">
+      <a class="" href="/">
+        <h1 class="visually-hidden">I. Welch Canavan</h1>
+      </a>
+
+        <a class="" href="/">Articles</a>
+        <a class="" href="/about">About</a>
+      </nav>
+    </header>
+
+    {{ contents | safe }}
+
+    <footer class="">
+      <p><small>Content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</small></p>
+    </footer>
+{% endblock %}

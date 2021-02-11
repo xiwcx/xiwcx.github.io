@@ -1,0 +1,49 @@
+.article-list {
+  $component-name: #{&};
+  $article: __article;
+  $first: --first;
+  $first-article: #{$component-name}#{$article}#{$first};
+
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+    grid-auto-rows: 1fr;
+  }
+
+  &#{$article} {
+    background-color: $color-lowlight;
+    display: flex;
+    margin: .5em;
+    width: 8em;
+
+    @supports (display: grid) {
+      margin: 0em;
+      padding: 1em;
+      width: 100%;
+    }
+
+    &#{$first} {
+      background-color: $color-primary;
+      font-size: 2em;
+      grid-column: span 2;
+      grid-row: span 2;
+
+      a {
+        color: $color-inverse;
+      }
+    }
+  }
+
+  &__target {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
