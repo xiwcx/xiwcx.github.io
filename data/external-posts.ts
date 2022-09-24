@@ -1,14 +1,4 @@
-import { z } from "zod";
-
-const externalPost = z.object({
-  frontmatter: z.undefined(),
-  description: z.string().optional(),
-  title: z.string(),
-  date: z.string(),
-  url: z.string(),
-});
-
-export type ExternalPost = z.infer<typeof externalPost>;
+import type { ExternalPost } from "../common/shapes/posts";
 
 export const externalPosts: ExternalPost[] = [
   {

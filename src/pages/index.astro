@@ -1,39 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { z } from "zod";
-import { A, G } from "@mobily/ts-belt";
-import { isBefore, parseISO } from "date-fns";
-import { externalPosts, ExternalPost } from "../../data/external-posts";
-import type { MarkdownInstance } from "astro";
+import { externalPosts } from "../../data/external-posts";
+import { isAstroPost, Post } from "../../common/shapes/posts";
+import { sortAnyPostByDate } from "../../common/utils/sort-any-post-by-date";
+import {
+  validateAstroPosts,
+  validateExternalPosts,
+} from "../../common/utils/validate";
 
-const post = z.object({
-  description: z.string().optional(),
-  heroAlt: z.string().optional(),
-  title: z.string(),
-  date: z.string(),
-});
+const astroPosts = await Astro.glob<Post>("./*.md");
 
-type Post = z.infer<typeof post>;
-type AstroPost = MarkdownInstance<Post>;
-type AnyPost = AstroPost | ExternalPost;
+validateAstroPosts(astroPosts);
+validateExternalPosts(externalPosts);
 
-const posts = await Astro.glob<Post>("./*.md");
-
-posts.forEach((p) => post.parse(p.frontmatter));
-
-const sortByDateAscending = (dateOne: Date, dateTwo: Date) =>
-  isBefore(dateOne, dateTwo) ? 1 : -1;
-
-const isAstroPost = (p: AnyPost): p is AstroPost => G.isObject(p.frontmatter);
-
-const getDateFromPost = (p: AnyPost) =>
-  parseISO(isAstroPost(p) ? p.frontmatter.date : p.date);
-
-const sortedPosts: Readonly<AnyPost[]> = A.sort(
-  [...posts, ...externalPosts],
-  (current, next) =>
-    sortByDateAscending(getDateFromPost(current), getDateFromPost(next))
-);
+const sortedPosts = sortAnyPostByDate([...astroPosts, ...externalPosts]);
 ---
 
 <Layout title="Welcome to Astro.">
