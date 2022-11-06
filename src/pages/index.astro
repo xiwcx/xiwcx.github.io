@@ -1,25 +1,45 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { externalPosts } from "../../data/external-posts";
-import { isAstroPost, Post } from "../../common/shapes/posts";
-import { sortAnyPostByDate } from "../../common/utils/sort-any-post-by-date";
-import {
-  validateAstroPosts,
-  validateExternalPosts,
-} from "../../common/utils/validate";
+import DefaultLayout from "../layouts/Default.astro";
+// import { externalPosts } from "../../data/external-posts";
+// import { isAstroPost, Post } from "../../common/shapes/posts";
+// import { sortAnyPostByDate } from "../../common/utils/sort-any-post-by-date";
+// import {
+//   validateAstroPosts,
+//   validateExternalPosts,
+// } from "../../common/utils/validate";
 
-const astroPosts = await Astro.glob<Post>("./*.md");
+// const astroPosts = await Astro.glob<Post>("./*.md");
 
-validateAstroPosts(astroPosts);
-validateExternalPosts(externalPosts);
+// validateAstroPosts(astroPosts);
+// validateExternalPosts(externalPosts);
 
-const sortedPosts = sortAnyPostByDate([...astroPosts, ...externalPosts]);
+// const sortedPosts = sortAnyPostByDate([...astroPosts, ...externalPosts]);
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <h1>I. Welch Canavan</h1>
+<style>
+  img {
+    max-width: 45em;
+  }
 
+  p {
+    font-size: 1.5em;
+    padding: 1.5em;
+    max-width: 30em;
+  }
+</style>
+
+<DefaultLayout>
+  <article>
+    <img src="/images/me-2019.jpg" />
+    <p class="type-display">
+      Hi, I'm welch, I'm a software engineer located in the Pacific Northwest.
+      Please have a look at my <a href="https://github.com/xiwcx/">code</a>, <a
+        href="https://www.linkedin.com/in/welchcanavan/">resume</a
+      >, or <a href="https://dev.to/xiwcx">writing</a>.
+    </p>
+  </article>
+
+  <!-- <div>
     {
       sortedPosts.map((p) =>
         isAstroPost(p) ? (
@@ -37,5 +57,5 @@ const sortedPosts = sortAnyPostByDate([...astroPosts, ...externalPosts]);
         )
       )
     }
-  </main>
-</Layout>
+  </div> -->
+</DefaultLayout>

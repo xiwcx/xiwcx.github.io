@@ -1,0 +1,18 @@
+---
+export interface Props {
+	as?: keyof HTMLElementTagNameMap;
+	variant: 'h1' | 'h2' | 'h3' | 'display'
+}
+
+const { as: Element = 'span', variant } = Astro.props;
+---
+
+<Element class={`type-${variant}`}>
+	<slot />
+</Element>
+
+<style>
+	:root {
+		--link-gradient: linear-gradient(45deg, #4f39fa, #da62c4 30%, var(--color-border) 60%);
+	}
+</style>

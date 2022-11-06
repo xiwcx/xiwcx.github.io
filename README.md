@@ -1,11 +1,25 @@
-# Welcome to [Astro](https://astro.build)
+# welchcanavan.com
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+## TO-DO
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- finish organizing layouts
+- add typography theme
+- add color theme
+  - https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
+  - https://gitlab.com/welchcanavan/www-site/-/blob/master/assets/styles/global/vars/theme.scss
+- favicon
+- page title
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+## notes
 
+- CSS
+  - https://docs.astro.build/en/guides/styling/#postcss
+  - https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting
+  - https://github.com/tokencss/tokencss?ck_subscriber_id=1672975617
+- images
+  - https://cloudinary.com/cookbook/resize_an_image
+- ideas
+  - https://www.youtube.com/watch?v=F18oy48jkrk
 
 ## 🚀 Project Structure
 
