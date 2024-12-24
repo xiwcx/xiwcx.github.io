@@ -3,14 +3,18 @@ import Layout from "../layouts/Default.astro";
 import { getCollection } from "astro:content";
 import ElsewhereItem from "../components/ElsewhereItem.astro";
 const elsewhere = await getCollection("elsewhere");
+const posts = await getCollection("posts");
 ---
 
 <Layout>
     <p>Hello world!</p>
 
     <section>
-        <h2>About</h2>
-        <p></p>
+        <h2>Writing</h2>
+
+        <ul>
+            {posts.map((item) => <li>{item.data.title}</li>)}
+        </ul>
     </section>
 
     <section>

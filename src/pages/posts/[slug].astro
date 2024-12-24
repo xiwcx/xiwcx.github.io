@@ -1,0 +1,31 @@
+---
+import { getCollection, render } from "astro:content";
+import { cloudinaryClient } from "../../utils/cloudinary";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+
+  return posts.map((post) => ({
+    params: { slug: post.data.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+let hero: unknown;
+
+// request cloudinary image by id
+try {
+  hero = await cloudinaryClient.api.resource(post.data.hero_cloudinary_id);
+} catch (e) {
+  throw Error(e);
+}
+
+const { Content } = await render(post);
+---
+
+<h1>{post.data.title}</h1>
+
+<img src={hero.secure_url} alt={hero.context.custom.alt} />
+
+<Content />
