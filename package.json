@@ -6,10 +6,12 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "vitest"
   },
   "dependencies": {
     "astro": "^5.1.1",
-    "cloudinary": "^2.5.1"
+    "cloudinary": "^2.5.1",
+    "vitest": "^2.1.8"
   }
 }
