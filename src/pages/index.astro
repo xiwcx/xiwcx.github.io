@@ -13,7 +13,15 @@ const posts = await getCollection("posts");
         <h2>Writing</h2>
 
         <ul>
-            {posts.map((item) => <li>{item.data.title}</li>)}
+            {
+                posts.map((item) => (
+                    <li>
+                        <a href={`/posts/${item.data.slug}`}>
+                            {item.data.title}
+                        </a>
+                    </li>
+                ))
+            }
         </ul>
     </section>
 

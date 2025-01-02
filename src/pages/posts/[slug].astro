@@ -1,4 +1,5 @@
 ---
+import Layout from "../../layouts/Default.astro";
 import { getCollection, render } from "astro:content";
 import {
     cloudinaryClient,
@@ -31,9 +32,10 @@ try {
 const { Content } = await render(post);
 ---
 
-<h1>{post.data.title}</h1>
+<Layout>
+    <h1>{post.data.title}</h1>
 
-<CloudinaryImage cloudinaryResource={hero} />
-<img src={hero.secure_url} alt={hero.context.custom.alt} />
+    <!-- <CloudinaryImage cloudinaryResource={hero} /> -->
 
-<Content />
+    <Content />
+</Layout>
