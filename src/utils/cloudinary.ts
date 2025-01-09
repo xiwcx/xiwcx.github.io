@@ -8,8 +8,8 @@ const cloudinaryClient = cloudinary.v2;
 cloudinaryClient.config({
   secure: true,
   cloud_name: hostname,
-  api_key: password,
-  api_secret: username,
+  api_key: username,
+  api_secret: password,
 });
 
 export { cloudinaryClient };
