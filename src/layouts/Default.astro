@@ -14,11 +14,7 @@
 
     <body>
         <header>
-            <h1><a href="/">Welch Canavan</a></h1>
-
-            <nav>
-                <a href="/">Home</a>
-            </nav>
+            <a href="/"><h1>Welch Canavan</h1></a>
 
             <form onchange="document.cookie = 'theme=' + this.theme.value">
                 <fieldset>
@@ -54,15 +50,15 @@
                 </fieldset>
             </form>
         </header>
+
+        <main>
+            <slot />
+        </main>
+
+        <footer>
+            <p>© 2024 Welch Canavan</p>
+        </footer>
     </body>
-
-    <main>
-        <slot />
-    </main>
-
-    <footer>
-        <p>© 2024 Welch Canavan</p>
-    </footer>
 </html>
 
 <style>
@@ -90,11 +86,40 @@
     }
 
     body {
-        font-family: "Crimson Pro", serif;
         background-color: var(--color-background);
         color: var(--color-text);
+        font-family: "Crimson Pro", serif;
+        font-size: clamp(1.2em, 1.5vw, 1.7em);
         transition-property: background-color, color;
         transition-duration: 0.25s;
         transition-timing-function: ease-in-out;
+        padding: 1em;
+        display: grid;
+        /* https://webtypography.net/2.1.2 */
+        grid-template-columns: 1fr min(66ch, 100%) 1fr;
+        grid-template-areas:
+            ".  header  ."
+            ".  main    ."
+            ".  footer  .";
+        justify-items: center;
+    }
+
+    header {
+        grid-area: header;
+        width: 100%;
+    }
+
+    main {
+        grid-area: main;
+        width: 100%;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    footer {
+        grid-area: footer;
+        width: 100%;
     }
 </style>
