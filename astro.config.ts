@@ -1,4 +1,5 @@
 import { defineConfig, envField } from "astro/config";
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
@@ -7,10 +8,14 @@ export default defineConfig({
       CLOUDINARY_URL: envField.string({ context: "server", access: "secret" }),
     },
   },
+
   output: "server",
+
   markdown: {
     shikiConfig: {
       theme: "dracula",
     },
   },
+
+  integrations: [mdx()],
 });

@@ -1,103 +1,106 @@
 ---
 import Layout from "../../layouts/Default.astro";
 import { getCollection, render } from "astro:content";
-import {
-    cloudinaryClient,
-    cloudinaryResourceSchema,
-    type CloudinaryResource,
-} from "../../utils/cloudinary";
+import { getCloudinaryResource } from "../../utils/cloudinary";
 import CloudinaryImage from "../../components/CloudinaryImage.astro";
 
 const { slug } = Astro.params;
 const posts = await getCollection("posts");
 const post = posts.find((post) => post.data.slug === slug);
 
-let hero: CloudinaryResource;
+if (!post) {
+  throw new Error(`Post not found: ${slug}`);
+}
 
-// try {
-//     const potentialHero = await cloudinaryClient.api.resource(
-//         post.data.hero_cloudinary_id,
-//     );
-//     hero = cloudinaryResourceSchema.parse(potentialHero);
-// } catch (e) {
-//     throw Error(JSON.stringify(e));
-// }
-
+const herodId = post.data.hero_cloudinary_id;
+const hero = herodId ? await getCloudinaryResource(herodId) : undefined;
 const { Content } = await render(post);
 ---
 
 <Layout>
-    <h1>{post.data.title}</h1>
+  <h1>{post.data.title}</h1>
 
-    <!-- <CloudinaryImage cloudinaryResource={hero} /> -->
+  {hero && <CloudinaryImage cloudinaryResource={hero} />}
 
-    <article>
-        <Content />
-    </article>
+  <article>
+    <Content />
+  </article>
 </Layout>
 
 <style>
-    article {
-        --border-radius: 0.25em;
+  article {
+    --border-radius: 0.25em;
 
-        line-height: 1.4;
-        margin-trim: block;
-        padding-block-start: 2lh;
-        padding-block-end: 2lh;
+    line-height: 1.4;
+    margin-trim: block;
+    padding-block-start: 2lh;
+    padding-block-end: 2lh;
 
-        code {
-            font-family: "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
-            font-size: 0.8em;
-        }
-
-        p {
-            margin-block: 1lh;
-
-            code {
-                background: var(--color-lowlight);
-                border-radius: var(--border-radius);
-                padding: 0.125em 0.25em;
-            }
-        }
-
-        .astro-code {
-            --y-padding: 1em;
-            --line-number-width: 2.5ch;
-
-            border-radius: var(--border-radius);
-            counter-reset: codeblock-line;
-            padding: 0.5em var(--y-padding);
-            position: relative;
-
-            &::before {
-                content: attr(data-language);
-                display: block;
-                text-align: right;
-                margin-inline-end: 1em;
-                width: 2.5ch;
-            }
-
-            &::after {
-                background-color: oklch(100% 0 0 / 5%);
-                position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                width: calc(var(--line-number-width) + var(--y-padding));
-                content: "";
-            }
-
-            .line {
-                counter-increment: codeblock-line;
-
-                &::before {
-                    content: counter(codeblock-line);
-                    display: inline-block;
-                    text-align: right;
-                    margin-inline-end: 1em;
-                    width: 2.5ch;
-                }
-            }
-        }
+    code {
+      font-family: "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
+      font-size: 0.8em;
     }
+
+    p {
+      margin-block: 1lh;
+
+      code {
+        background: var(--color-lowlight);
+        border-radius: var(--border-radius);
+        padding: 0.125em 0.25em;
+      }
+    }
+
+    .astro-code {
+      --x-padding: 1em;
+      --y-padding: 0.5em;
+      --padding-inline-start: calc(var(--x-padding) / 2);
+      --line-number-width: 2.5ch;
+      --meta-background: oklch(100% 0 0 / 5%);
+
+      border-radius: var(--border-radius);
+      counter-reset: codeblock-line;
+      padding-block-end: var(--y-padding);
+      padding-block-start: var(--y-padding);
+      padding-inline-end: var(--x-padding);
+      padding-inline-start: var(--padding-inline-start);
+      position: relative;
+
+      &::before {
+        background-color: var(--meta-background);
+        border-start-start-radius: var(--border-radius);
+        bottom: 0;
+        content: attr(data-language);
+        display: block;
+        font-size: 0.8em;
+        padding: 0.25em 0.5em;
+        position: absolute;
+        opacity: 0.75;
+        right: 0;
+      }
+
+      &::after {
+        background-color: var(--meta-background);
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: calc(var(--line-number-width) + var(--padding-inline-start));
+        content: "";
+      }
+
+      .line {
+        counter-increment: codeblock-line;
+
+        &::before {
+          content: counter(codeblock-line);
+          display: inline-block;
+          text-align: right;
+          margin-inline-end: 1em;
+          opacity: 0.5;
+          width: 2.5ch;
+        }
+      }
+    }
+  }
 </style>

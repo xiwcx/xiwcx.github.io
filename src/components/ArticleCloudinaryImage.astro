@@ -1,0 +1,14 @@
+---
+import { getCloudinaryResource } from "../utils/cloudinary";
+import CloudinaryImage from "./CloudinaryImage.astro";
+
+export interface Props {
+  cloudinaryId: string;
+}
+
+const { cloudinaryId } = Astro.props;
+
+const cloudinaryResource = await getCloudinaryResource(cloudinaryId);
+---
+
+<CloudinaryImage cloudinaryResource={cloudinaryResource} />

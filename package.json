@@ -10,7 +10,8 @@
     "test": "vitest"
   },
   "dependencies": {
-    "astro": "^5.1.1",
+    "@astrojs/mdx": "^4.0.5",
+    "astro": "^5.1.5",
     "cloudinary": "^2.5.1"
   },
   "devDependencies": {

@@ -39,15 +39,19 @@ export const cloudinaryResourceSchema = z.object({
   display_name: z.string(),
   url: z.string(),
   secure_url: z.string(),
-  context: z.object({
-    custom: z.object({
-      alt: z.string(),
-    }),
-  }),
-  last_updated: z.object({
-    context_updated_at: z.string(),
-    updated_at: z.string(),
-  }),
+  context: z
+    .object({
+      custom: z.object({
+        alt: z.string(),
+      }),
+    })
+    .optional(),
+  last_updated: z
+    .object({
+      context_updated_at: z.string(),
+      updated_at: z.string(),
+    })
+    .optional(),
   next_cursor: z.string(),
   derived: z.array(cloudinaryDerivedSchema),
   rate_limit_allowed: z.number(),
@@ -56,3 +60,17 @@ export const cloudinaryResourceSchema = z.object({
 });
 
 export type CloudinaryResource = z.infer<typeof cloudinaryResourceSchema>;
+
+export const getCloudinaryResource = async (cloudinaryId: string) => {
+  let resource: CloudinaryResource;
+
+  try {
+    const response = await cloudinaryClient.api.resource(cloudinaryId);
+
+    resource = cloudinaryResourceSchema.parse(response);
+  } catch (e) {
+    throw Error(JSON.stringify(e));
+  }
+
+  return resource;
+};

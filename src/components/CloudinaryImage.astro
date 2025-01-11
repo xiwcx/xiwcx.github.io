@@ -2,7 +2,7 @@
 import { type CloudinaryResource, cloudinaryClient } from "../utils/cloudinary";
 import { range } from "../utils/range";
 export interface Props {
-    cloudinaryResource: CloudinaryResource;
+  cloudinaryResource: CloudinaryResource;
 }
 
 const { cloudinaryResource } = Astro.props;
@@ -10,20 +10,17 @@ const { cloudinaryResource } = Astro.props;
 console.log(cloudinaryResource.width);
 
 const srcSet = range(200, cloudinaryResource.width, 200)
-    .map(
-        (width) =>
-            `${cloudinaryClient.url(cloudinaryResource.public_id, {
-                transformation: [
-                    { width, crop: "scale" },
-                    { fetch_format: "auto" },
-                ],
-            })} ${width}w`,
-    )
-    .join(", ");
+  .map(
+    (width) =>
+      `${cloudinaryClient.url(cloudinaryResource.public_id, {
+        transformation: [{ width, crop: "scale" }, { fetch_format: "auto" }],
+      })} ${width}w`
+  )
+  .join(", ");
 ---
 
 <img
-    src={cloudinaryClient.url(cloudinaryResource.secure_url)}
-    srcset={srcSet}
-    alt={cloudinaryResource.context.custom.alt}
+  src={cloudinaryClient.url(cloudinaryResource.secure_url)}
+  srcset={srcSet}
+  alt={cloudinaryResource.context?.custom.alt}
 />
