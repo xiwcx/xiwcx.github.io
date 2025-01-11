@@ -8,138 +8,138 @@ const theme = themeSchema.parse(Astro.cookies.get("theme")?.value);
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link
-            href="https://api.fontshare.com/v2/css?f[]=crimson-pro@1&display=swap"
-            rel="stylesheet"
-        />
-        <meta name="color-scheme" content="dark light" />
-        <meta name="generator" content={Astro.generator} />
-        <title>i. welch canavan</title>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=crimson-pro@1&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="generator" content={Astro.generator} />
+    <title>i. welch canavan</title>
+  </head>
 
-    <body>
-        <header>
-            <a href="/" class="title">
-                <Logo svgProps={{ class: "logo" }} />
-                <h1>i. welch canavan</h1>
-            </a>
-        </header>
+  <body>
+    <header>
+      <a href="/" class="title">
+        <Logo svgProps={{ class: "logo" }} />
+        <h1>i. welch canavan</h1>
+      </a>
+    </header>
 
-        <main>
-            <slot />
-        </main>
+    <main>
+      <slot />
+    </main>
 
-        <footer>
-            <p>© 2024 Welch Canavan</p>
+    <footer>
+      <p>© 2024 Welch Canavan</p>
 
-            <FormTheme theme={theme} />
-        </footer>
-    </body>
+      <FormTheme theme={theme} />
+    </footer>
+  </body>
 </html>
 
 <style is:global>
-    :root {
-        color-scheme: light dark;
+  :root {
+    color-scheme: light dark;
 
-        --dark-green: oklch(25% 0.04 135);
-        --dark-green-lighter: oklch(35% 0.1 135);
-        --light-green-darker: oklch(90% 0.06 135);
-        --light-green: oklch(98% 0.02 135);
+    --dark-green: oklch(25% 0.04 135);
+    --dark-green-lighter: oklch(35% 0.1 135);
+    --light-green-darker: oklch(90% 0.06 135);
+    --light-green: oklch(98% 0.02 135);
 
-        --color-text: light-dark(var(--dark-green), var(--light-green));
-        --color-lowlight: light-dark(
-            var(--light-green-darker),
-            var(--dark-green-lighter)
-        );
-        --color-background: light-dark(var(--light-green), var(--dark-green));
+    --color-text: light-dark(var(--dark-green), var(--light-green));
+    --color-lowlight: light-dark(
+      var(--light-green-darker),
+      var(--dark-green-lighter)
+    );
+    --color-background: light-dark(var(--light-green), var(--dark-green));
 
-        &:has(#theme-light:checked) {
-            color-scheme: light;
+    &:has(#theme-light:checked) {
+      color-scheme: light;
+    }
+
+    &:has(#theme-dark:checked) {
+      color-scheme: dark;
+    }
+  }
+
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: "Crimson Pro", serif;
+    font-size: clamp(1.2em, 1.75vw, 1.7em);
+    transition-property: background-color, color;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+    padding: 1em;
+    display: grid;
+    /* https://webtypography.net/2.1.2 */
+    grid-template-columns: 1fr min(50ch, 100%) 1fr;
+    grid-template-areas:
+      ".  header  ."
+      ".  main    ."
+      ".  footer  .";
+    justify-items: center;
+  }
+
+  header {
+    grid-area: header;
+    width: 100%;
+
+    .title {
+      align-items: center;
+      display: flex;
+      gap: 1em;
+
+      .logo {
+        width: 4em;
+
+        path {
+          fill: var(--color-text);
         }
+      }
 
-        &:has(#theme-dark:checked) {
-            color-scheme: dark;
-        }
+      h1 {
+        font-size: 1em;
+      }
     }
+  }
 
-    *,
-    *:after,
-    *:before {
-        box-sizing: border-box;
+  main {
+    grid-area: main;
+    width: 100%;
+
+    img {
+      max-width: 100%;
     }
+  }
 
-    html,
-    body {
-        margin: 0;
-    }
+  footer {
+    grid-area: footer;
+    width: 100%;
+  }
 
-    body {
-        background-color: var(--color-background);
-        color: var(--color-text);
-        font-family: "Crimson Pro", serif;
-        font-size: clamp(1.2em, 1.75vw, 1.7em);
-        transition-property: background-color, color;
-        transition-duration: 0.25s;
-        transition-timing-function: ease-in-out;
-        padding: 1em;
-        display: grid;
-        /* https://webtypography.net/2.1.2 */
-        grid-template-columns: 1fr min(66ch, 100%) 1fr;
-        grid-template-areas:
-            ".  header  ."
-            ".  main    ."
-            ".  footer  .";
-        justify-items: center;
-    }
-
-    header {
-        grid-area: header;
-        width: 100%;
-
-        .title {
-            align-items: center;
-            display: flex;
-            gap: 1em;
-
-            .logo {
-                width: 4em;
-
-                path {
-                    fill: var(--color-text);
-                }
-            }
-
-            h1 {
-                font-size: 1em;
-            }
-        }
-    }
-
-    main {
-        grid-area: main;
-        width: 100%;
-
-        img {
-            max-width: 100%;
-        }
-    }
-
-    footer {
-        grid-area: footer;
-        width: 100%;
-    }
-
-    .screen-reader-only {
-        clip: rect(0 0 0 0);
-        clip-path: inset(50%);
-        height: 1px;
-        overflow: hidden;
-        position: absolute;
-        white-space: nowrap;
-        width: 1px;
-    }
+  .screen-reader-only {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
 </style>

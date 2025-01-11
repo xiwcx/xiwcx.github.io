@@ -2,8 +2,6 @@
 title: Simple Element Queries With React Hooks
 slug: simple-element-queries-with-react-hooks
 date: 2019-11-04
-hero: simple-element-queries-with-react-hooks.jpg
-hero-alt: screenshot of react component code including a use measure reference
 ---
 
 During the interminable wait for [element queries](https://css-tricks.com/lets-not-forget-about-container-queries/) it is difficult to not run ahead and experiment with their immense potential. Though there are a few options for using them in your CSS today, the two primary options ([EQCSS](https://github.com/eqcss/eqcss) and [CSS Element Queries](https://github.com/marcj/css-element-queries)) have differing APIs with no clear winner. I try to avoid committing to fluctuating syntaxes in my projects, as I prefer solutions that are more explicit. I've written a few iterations of custom solutions in a few frameworks, but haven't been very happy with them so far. While working on a side project recently I found that [React Hooks](https://reactjs.org/docs/hooks-intro.html) provide a concise and satisfying solution.

@@ -4,30 +4,33 @@ import { getCollection } from "astro:content";
 import ElsewhereItem from "../components/ElsewhereItem.astro";
 const elsewhere = await getCollection("elsewhere");
 const posts = await getCollection("posts");
+
+const processedPosts = posts
+  .sort((a, b) => (b.data.date > a.data.date ? 1 : -1))
+  .filter((item) => !item.data.draft)
+  .slice(0, 5);
 ---
 
 <Layout>
-    <section>
-        <h2>Writing</h2>
+  <section>
+    <h2>Writing</h2>
 
-        <ul>
-            {
-                posts.map((item) => (
-                    <li>
-                        <a href={`/posts/${item.data.slug}`}>
-                            {item.data.title}
-                        </a>
-                    </li>
-                ))
-            }
-        </ul>
-    </section>
+    <ul>
+      {
+        processedPosts.map((item) => (
+          <li>
+            <a href={`/posts/${item.data.slug}`}>{item.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 
-    <section>
-        <h2>Elsewhere</h2>
+  <section>
+    <h2>Elsewhere</h2>
 
-        <ul>
-            {elsewhere.map((item) => <ElsewhereItem item={item} />)}
-        </ul>
-    </section>
+    <ul>
+      {elsewhere.map((item) => <ElsewhereItem item={item} />)}
+    </ul>
+  </section>
 </Layout>
