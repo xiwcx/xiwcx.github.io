@@ -7,4 +7,10 @@ export default defineConfig({
       CLOUDINARY_URL: envField.string({ context: "server", access: "secret" }),
     },
   },
+  output: "server",
+  markdown: {
+    shikiConfig: {
+      theme: "dracula",
+    },
+  },
 });

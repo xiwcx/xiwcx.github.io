@@ -8,26 +8,20 @@ import {
 } from "../../utils/cloudinary";
 import CloudinaryImage from "../../components/CloudinaryImage.astro";
 
-export async function getStaticPaths() {
-    const posts = await getCollection("posts");
+const { slug } = Astro.params;
+const posts = await getCollection("posts");
+const post = posts.find((post) => post.data.slug === slug);
 
-    return posts.map((post) => ({
-        params: { slug: post.data.slug },
-        props: { post },
-    }));
-}
-
-const { post } = Astro.props;
 let hero: CloudinaryResource;
 
-try {
-    const potentialHero = await cloudinaryClient.api.resource(
-        post.data.hero_cloudinary_id,
-    );
-    hero = cloudinaryResourceSchema.parse(potentialHero);
-} catch (e) {
-    throw Error(JSON.stringify(e));
-}
+// try {
+//     const potentialHero = await cloudinaryClient.api.resource(
+//         post.data.hero_cloudinary_id,
+//     );
+//     hero = cloudinaryResourceSchema.parse(potentialHero);
+// } catch (e) {
+//     throw Error(JSON.stringify(e));
+// }
 
 const { Content } = await render(post);
 ---
@@ -35,7 +29,75 @@ const { Content } = await render(post);
 <Layout>
     <h1>{post.data.title}</h1>
 
-    <CloudinaryImage cloudinaryResource={hero} />
+    <!-- <CloudinaryImage cloudinaryResource={hero} /> -->
 
-    <Content />
+    <article>
+        <Content />
+    </article>
 </Layout>
+
+<style>
+    article {
+        --border-radius: 0.25em;
+
+        line-height: 1.4;
+        margin-trim: block;
+        padding-block-start: 2lh;
+        padding-block-end: 2lh;
+
+        code {
+            font-family: "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
+            font-size: 0.8em;
+        }
+
+        p {
+            margin-block: 1lh;
+
+            code {
+                background: var(--color-lowlight);
+                border-radius: var(--border-radius);
+                padding: 0.125em 0.25em;
+            }
+        }
+
+        .astro-code {
+            --y-padding: 1em;
+            --line-number-width: 2.5ch;
+
+            border-radius: var(--border-radius);
+            counter-reset: codeblock-line;
+            padding: 0.5em var(--y-padding);
+            position: relative;
+
+            &::before {
+                content: attr(data-language);
+                display: block;
+                text-align: right;
+                margin-inline-end: 1em;
+                width: 2.5ch;
+            }
+
+            &::after {
+                background-color: oklch(100% 0 0 / 5%);
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: calc(var(--line-number-width) + var(--y-padding));
+                content: "";
+            }
+
+            .line {
+                counter-increment: codeblock-line;
+
+                &::before {
+                    content: counter(codeblock-line);
+                    display: inline-block;
+                    text-align: right;
+                    margin-inline-end: 1em;
+                    width: 2.5ch;
+                }
+            }
+        }
+    }
+</style>

@@ -16,7 +16,7 @@ const postSchema = z.object({
   title: z.string(),
   slug: z.string(),
   date: z.coerce.date(),
-  hero_cloudinary_id: z.string(),
+  hero_cloudinary_id: z.string().optional(),
 });
 
 const posts = defineCollection({

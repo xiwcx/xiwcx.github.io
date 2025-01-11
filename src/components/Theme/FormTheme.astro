@@ -1,0 +1,87 @@
+---
+import { type Theme } from "./theme";
+
+export interface Props {
+    theme?: Theme;
+}
+
+const { theme = "system" } = Astro.props;
+---
+
+<form onchange="document.cookie = `theme=${this.theme.value};path=/`">
+    <fieldset>
+        <legend>Theme:</legend>
+
+        <div class="radio-group">
+            <label>
+                <input
+                    class="screen-reader-only"
+                    type="radio"
+                    name="theme"
+                    id="theme-system"
+                    value="system"
+                    checked={theme === "system"}
+                />
+
+                System
+            </label>
+
+            <label for="theme-light">
+                <input
+                    class="screen-reader-only"
+                    type="radio"
+                    name="theme"
+                    id="theme-light"
+                    value="light"
+                    checked={theme === "light"}
+                />
+
+                Light
+            </label>
+
+            <label>
+                <input
+                    class="screen-reader-only"
+                    type="radio"
+                    name="theme"
+                    id="theme-dark"
+                    value="dark"
+                    checked={theme === "dark"}
+                />
+
+                Dark
+            </label>
+        </div>
+    </fieldset>
+</form>
+
+<style>
+    fieldset {
+        all: unset;
+
+        --x-padding: 1em;
+        --y-padding: 0.5em;
+    }
+
+    legend {
+        all: unset;
+        padding-block: var(--y-padding);
+        padding-inline: var(--x-padding);
+        float: left;
+    }
+
+    .radio-group {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+
+    label {
+        padding-block: var(--y-padding);
+        padding-inline: var(--x-padding);
+        border-radius: 0.25em;
+
+        &:has(input:checked) {
+            background: var(--color-lowlight);
+        }
+    }
+</style>
