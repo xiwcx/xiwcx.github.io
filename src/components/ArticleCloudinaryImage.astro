@@ -1,6 +1,7 @@
 ---
 import { getCloudinaryResource } from "../utils/cloudinary";
 import CloudinaryImage from "./CloudinaryImage.astro";
+import { defaultImageSizes } from "../utils/cloudinary";
 
 export interface Props {
   cloudinaryId: string;
@@ -11,4 +12,8 @@ const { cloudinaryId } = Astro.props;
 const cloudinaryResource = await getCloudinaryResource(cloudinaryId);
 ---
 
-<CloudinaryImage cloudinaryResource={cloudinaryResource} />
+<CloudinaryImage
+  cloudinaryResource={cloudinaryResource}
+  sizes={defaultImageSizes}
+  imageProps={{ loading: "lazy" }}
+/>

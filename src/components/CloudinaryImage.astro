@@ -1,26 +1,46 @@
 ---
+import type { JSX } from "astro/jsx-runtime";
 import { type CloudinaryResource, cloudinaryClient } from "../utils/cloudinary";
 import { range } from "../utils/range";
+import { undefined } from "astro:schema";
+import { type Size } from "../utils/cloudinary";
+
 export interface Props {
   cloudinaryResource: CloudinaryResource;
+  imageProps?: Omit<
+    JSX.IntrinsicElements["img"],
+    "alt" | "height" | "sizes" | "src" | "srcSet" | "width"
+  >;
+  sizes?: Size[];
 }
 
-const { cloudinaryResource } = Astro.props;
-
-console.log(cloudinaryResource.width);
+const { cloudinaryResource, imageProps, sizes } = Astro.props;
 
 const srcSet = range(200, cloudinaryResource.width, 200)
   .map(
     (width) =>
       `${cloudinaryClient.url(cloudinaryResource.public_id, {
-        transformation: [{ width, crop: "scale" }, { fetch_format: "auto" }],
+        transformation: [{ width }, { fetch_format: "auto" }],
       })} ${width}w`
   )
+  .reverse()
   .join(", ");
+const formattedSizes: string | undefined = sizes
+  ? sizes
+      .sort(([sizeA], [sizeB]) => sizeB - sizeA)
+      .map(([minWidth, size]) =>
+        minWidth > 0 ? `(min-width: ${minWidth}px) ${size}vw` : `${size}vw`
+      )
+      .join(", ")
+  : undefined;
 ---
 
 <img
+  width={cloudinaryResource.width}
+  height={cloudinaryResource.height}
   src={cloudinaryClient.url(cloudinaryResource.secure_url)}
   srcset={srcSet}
+  sizes={formattedSizes}
   alt={cloudinaryResource.context?.custom.alt}
+  {...imageProps}
 />

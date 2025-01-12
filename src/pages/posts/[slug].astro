@@ -1,17 +1,22 @@
 ---
 import Layout from "../../layouts/Default.astro";
 import { getCollection, render } from "astro:content";
-import { getCloudinaryResource } from "../../utils/cloudinary";
+import {
+  defaultImageSizes,
+  getCloudinaryResource,
+} from "../../utils/cloudinary";
 import CloudinaryImage from "../../components/CloudinaryImage.astro";
 
-const { slug } = Astro.params;
-const posts = await getCollection("posts");
-const post = posts.find((post) => post.data.slug === slug);
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
 
-if (!post) {
-  throw new Error(`Post not found: ${slug}`);
+  return posts.map((post) => ({
+    params: { slug: post.data.slug },
+    props: { post },
+  }));
 }
 
+const { post } = Astro.props;
 const herodId = post.data.hero_cloudinary_id;
 const hero = herodId ? await getCloudinaryResource(herodId) : undefined;
 const { Content } = await render(post);
@@ -20,7 +25,15 @@ const { Content } = await render(post);
 <Layout>
   <h1>{post.data.title}</h1>
 
-  {hero && <CloudinaryImage cloudinaryResource={hero} />}
+  {
+    hero && (
+      <CloudinaryImage
+        cloudinaryResource={hero}
+        imageProps={{ fetchpriority: "high" }}
+        sizes={defaultImageSizes}
+      />
+    )
+  }
 
   <article>
     <Content />

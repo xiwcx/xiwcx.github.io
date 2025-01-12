@@ -74,3 +74,11 @@ export const getCloudinaryResource = async (cloudinaryId: string) => {
 
   return resource;
 };
+
+export type Size = [minWidthPX: number, sizeVW: number];
+
+export const defaultImageSizes: Size[] = [
+  [0, 100],
+  [600, 75],
+  [800, 50],
+];

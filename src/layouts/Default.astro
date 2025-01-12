@@ -1,9 +1,6 @@
 ---
-import { themeSchema } from "../components/Theme";
 import FormTheme from "../components/Theme/FormTheme.astro";
 import Logo from "../components/Logo.astro";
-
-const theme = themeSchema.parse(Astro.cookies.get("theme")?.value);
 ---
 
 <!doctype html>
@@ -19,14 +16,43 @@ const theme = themeSchema.parse(Astro.cookies.get("theme")?.value);
     <meta name="color-scheme" content="dark light" />
     <meta name="generator" content={Astro.generator} />
     <title>i. welch canavan</title>
+
+    <script is:inline>
+      const theme = localStorage.getItem("theme") || "system";
+
+      const colorScheme = {
+        system: "light dark",
+        light: "light",
+        dark: "dark",
+      };
+
+      document.documentElement.style.colorScheme = colorScheme[theme];
+    </script>
+
+    <link rel="stylesheet" href="/styles/main.css" />
   </head>
 
   <body>
     <header>
-      <a href="/" class="title">
-        <Logo svgProps={{ class: "logo" }} />
-        <h1>i. welch canavan</h1>
-      </a>
+      <nav>
+        <ul>
+          <li>
+            <a href="/" class="title">
+              <Logo svgProps={{ class: "logo" }} />
+              <h1>i. welch canavan</h1>
+            </a>
+          </li>
+          <li>
+            <a href="https://bsky.app/profile/xiwcx.bsky.social">Bluesky</a>
+          </li>
+          <li>
+            <a href="https://github.com/xiwcx">GitHub</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/welchcanavan/">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <main>
@@ -36,110 +62,22 @@ const theme = themeSchema.parse(Astro.cookies.get("theme")?.value);
     <footer>
       <p>© 2024 Welch Canavan</p>
 
-      <FormTheme theme={theme} />
+      <FormTheme />
     </footer>
   </body>
-</html>
 
-<style is:global>
-  :root {
-    color-scheme: light dark;
-
-    --dark-green: oklch(25% 0.04 135);
-    --dark-green-lighter: oklch(35% 0.1 135);
-    --light-green-darker: oklch(90% 0.06 135);
-    --light-green: oklch(98% 0.02 135);
-
-    --color-text: light-dark(var(--dark-green), var(--light-green));
-    --color-lowlight: light-dark(
-      var(--light-green-darker),
-      var(--dark-green-lighter)
-    );
-    --color-background: light-dark(var(--light-green), var(--dark-green));
-
-    &:has(#theme-light:checked) {
-      color-scheme: light;
-    }
-
-    &:has(#theme-dark:checked) {
-      color-scheme: dark;
-    }
-  }
-
-  *,
-  *:after,
-  *:before {
-    box-sizing: border-box;
-  }
-
-  html,
-  body {
-    margin: 0;
-  }
-
-  body {
-    background-color: var(--color-background);
-    color: var(--color-text);
-    font-family: "Crimson Pro", serif;
-    font-size: clamp(1.2em, 1.75vw, 1.7em);
-    transition-property: background-color, color;
-    transition-duration: 0.25s;
-    transition-timing-function: ease-in-out;
-    padding: 1em;
-    display: grid;
-    /* https://webtypography.net/2.1.2 */
-    grid-template-columns: 1fr min(50ch, 100%) 1fr;
-    grid-template-areas:
-      ".  header  ."
-      ".  main    ."
-      ".  footer  .";
-    justify-items: center;
-  }
-
-  header {
-    grid-area: header;
-    width: 100%;
-
-    .title {
-      align-items: center;
-      display: flex;
-      gap: 1em;
-
-      .logo {
-        width: 4em;
-
-        path {
-          fill: var(--color-text);
+  <style>
+    header {
+      nav {
+        ul {
+          align-items: center;
+          display: flex;
+          gap: 1em;
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
         }
       }
-
-      h1 {
-        font-size: 1em;
-      }
     }
-  }
-
-  main {
-    grid-area: main;
-    width: 100%;
-
-    img {
-      max-width: 100%;
-    }
-  }
-
-  footer {
-    grid-area: footer;
-    width: 100%;
-  }
-
-  .screen-reader-only {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }
-</style>
+  </style>
+</html>

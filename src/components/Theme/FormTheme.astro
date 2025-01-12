@@ -1,87 +1,96 @@
 ---
-import { type Theme } from "./theme";
 
-export interface Props {
-    theme?: Theme;
-}
-
-const { theme = "system" } = Astro.props;
 ---
 
-<form onchange="document.cookie = `theme=${this.theme.value};path=/`">
-    <fieldset>
-        <legend>Theme:</legend>
+<form id="theme-form">
+  <fieldset>
+    <legend>Theme:</legend>
 
-        <div class="radio-group">
-            <label>
-                <input
-                    class="screen-reader-only"
-                    type="radio"
-                    name="theme"
-                    id="theme-system"
-                    value="system"
-                    checked={theme === "system"}
-                />
+    <div class="radio-group">
+      <label>
+        <input
+          class="screen-reader-only"
+          type="radio"
+          name="theme"
+          id="theme-system"
+          value="system"
+        />
 
-                System
-            </label>
+        System
+      </label>
 
-            <label for="theme-light">
-                <input
-                    class="screen-reader-only"
-                    type="radio"
-                    name="theme"
-                    id="theme-light"
-                    value="light"
-                    checked={theme === "light"}
-                />
+      <label for="theme-light">
+        <input
+          class="screen-reader-only"
+          type="radio"
+          name="theme"
+          id="theme-light"
+          value="light"
+        />
 
-                Light
-            </label>
+        Light
+      </label>
 
-            <label>
-                <input
-                    class="screen-reader-only"
-                    type="radio"
-                    name="theme"
-                    id="theme-dark"
-                    value="dark"
-                    checked={theme === "dark"}
-                />
+      <label>
+        <input
+          class="screen-reader-only"
+          type="radio"
+          name="theme"
+          id="theme-dark"
+          value="dark"
+        />
 
-                Dark
-            </label>
-        </div>
-    </fieldset>
+        Dark
+      </label>
+    </div>
+  </fieldset>
 </form>
 
+<script is:inline>
+  const input = document.getElementById(
+    `theme-${localStorage.getItem("theme")}`
+  );
+  input.checked = true;
+
+  function handleFormChange(event) {
+    document.documentElement.style.colorScheme = null;
+    localStorage.setItem("theme", event.target.value);
+
+    const input = event.target;
+    input.checked = true;
+  }
+
+  const form = document.getElementById("theme-form");
+  form.addEventListener("change", handleFormChange);
+</script>
+
 <style>
-    fieldset {
-        all: unset;
+  fieldset {
+    all: unset;
 
-        --x-padding: 1em;
-        --y-padding: 0.5em;
+    --x-padding: 1em;
+    --y-padding: 0.5em;
+  }
+
+  legend {
+    all: unset;
+    padding-block: var(--y-padding);
+    padding-inline: var(--x-padding);
+    float: left;
+  }
+
+  .radio-group {
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+
+  label {
+    padding-block: var(--y-padding);
+    padding-inline: var(--x-padding);
+    border-radius: 0.25em;
+
+    &:has(input:checked) {
+      background: var(--color-lowlight);
     }
-
-    legend {
-        all: unset;
-        padding-block: var(--y-padding);
-        padding-inline: var(--x-padding);
-        float: left;
-    }
-
-    .radio-group {
-        display: inline-flex;
-        flex-wrap: wrap;
-    }
-
-    label {
-        padding-block: var(--y-padding);
-        padding-inline: var(--x-padding);
-        border-radius: 0.25em;
-
-        &:has(input:checked) {
-            background: var(--color-lowlight);
-        }
-    }
+  }
 </style>

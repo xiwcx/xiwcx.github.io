@@ -9,8 +9,6 @@ export default defineConfig({
     },
   },
 
-  output: "server",
-
   markdown: {
     shikiConfig: {
       theme: "dracula",
