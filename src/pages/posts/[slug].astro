@@ -44,14 +44,17 @@ const { Content } = await render(post);
   article {
     --border-radius: 0.25em;
 
-    line-height: 1.4;
     margin-trim: block;
-    padding-block-start: 2lh;
     padding-block-end: 2lh;
 
     code {
       font-family: "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
       font-size: 0.8em;
+    }
+
+    a {
+      color: var(--color-text-highlight);
+      opacity: 0.9;
     }
 
     p {
