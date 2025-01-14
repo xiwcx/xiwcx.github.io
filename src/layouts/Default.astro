@@ -45,13 +45,13 @@ import Logo from "../components/Logo.astro";
             </a>
           </li>
           <li>
-            <a href="https://bsky.app/profile/xiwcx.bsky.social">Bluesky</a>
-          </li>
-          <li>
             <a href="https://github.com/xiwcx">GitHub</a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/welchcanavan/">LinkedIn</a>
+          </li>
+          <li>
+            <a href="https://bsky.app/profile/xiwcx.bsky.social">Bluesky</a>
           </li>
         </ul>
       </nav>
@@ -71,6 +71,8 @@ import Logo from "../components/Logo.astro";
   <style>
     header {
       nav {
+        margin-block-end: 2em;
+
         ul {
           align-items: center;
           display: flex;
@@ -78,6 +80,14 @@ import Logo from "../components/Logo.astro";
           list-style-type: none;
           margin: 0;
           padding: 0;
+
+          li:first-child {
+            font-variation-settings: "wght" 500;
+
+            a {
+              text-decoration: none;
+            }
+          }
         }
       }
     }

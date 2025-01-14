@@ -13,7 +13,7 @@ const processedPosts = posts
   <section>
     <h2>Writing</h2>
 
-    <ul>
+    <ul class="recent">
       {
         processedPosts.map((item) => (
           <li>
@@ -26,6 +26,15 @@ const processedPosts = posts
 </Layout>
 
 <style>
+  .recent {
+    list-style-type: none;
+    padding-inline-start: 0;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
   section {
     margin-block: 2em;
   }

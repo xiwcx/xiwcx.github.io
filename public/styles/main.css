@@ -33,12 +33,16 @@
   &:has(#theme-dark:checked) {
     color-scheme: dark;
   }
+
+  --font-family-default: "ivyepic-variable", sans-serif;
+  --font-family-body: "Crimson Pro", serif;
 }
 
 body {
   background-color: var(--color-background);
   color: var(--color-text);
-  font-family: "Crimson Pro", serif;
+  font-family: var(--font-family-default);
+  font-variation-settings: "slnt" 0, "wght" 300, "wdth" 95;
   font-size: clamp(1.2em, 1.75vw, 1.7em);
   display: grid;
   /* https://webtypography.net/2.1.2 */
@@ -65,7 +69,8 @@ header {
     gap: 1em;
 
     .logo {
-      width: 4em;
+      height: 2em;
+      width: auto;
 
       path {
         fill: var(--color-text);
@@ -125,11 +130,18 @@ h6 {
 
 a {
   color: inherit;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 0.0625em;
 
   &:visited,
   &:hover {
     color: inherit;
   }
+}
+
+.font-body {
+  font-family: var(--font-family-body);
+  font-variation-settings: initial;
 }
 
 .screen-reader-only {

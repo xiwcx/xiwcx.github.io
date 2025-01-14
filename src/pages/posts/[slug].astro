@@ -35,7 +35,7 @@ const { Content } = await render(post);
     )
   }
 
-  <article>
+  <article class="font-body">
     <Content />
   </article>
 </Layout>
@@ -46,6 +46,25 @@ const { Content } = await render(post);
 
     margin-trim: block;
     padding-block-end: 2lh;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-family-default);
+      font-variation-settings: "wght" 500;
+    }
+
+    p:has(+ h1),
+    p:has(+ h2),
+    p:has(+ h3),
+    p:has(+ h4),
+    p:has(+ h5),
+    p:has(+ h6) {
+      margin-block-end: 2lh;
+    }
 
     code {
       font-family: "Menlo", "Consolas", "DejaVu Sans Mono", monospace;
