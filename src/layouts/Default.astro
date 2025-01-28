@@ -38,7 +38,7 @@ import Logo from "../components/Logo.astro";
     <header>
       <nav>
         <ul>
-          <li>
+          <li class="title-container">
             <a href="/" class="title">
               <Logo svgProps={{ class: "logo" }} />
               <h1>i. welch canavan</h1>
@@ -62,20 +62,29 @@ import Logo from "../components/Logo.astro";
     </main>
 
     <footer>
-      <p>© 2024 Welch Canavan</p>
-
       <FormTheme />
+
+      <p>© 2024 Welch Canavan</p>
     </footer>
   </body>
 
   <style>
     header {
+      .title-container {
+        width: 100%;
+
+        @media (min-width: 500px) {
+          flex-grow: 1;
+          width: auto;
+        }
+      }
       nav {
         margin-block-end: 2em;
 
         ul {
           align-items: center;
           display: flex;
+          flex-wrap: wrap;
           gap: 1em;
           list-style-type: none;
           margin: 0;

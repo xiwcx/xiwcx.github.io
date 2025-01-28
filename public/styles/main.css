@@ -81,6 +81,12 @@ header {
       font-size: 1em;
     }
   }
+
+  nav {
+    a {
+      font-size: 0.75em;
+    }
+  }
 }
 
 main {
@@ -132,6 +138,30 @@ a {
   color: inherit;
   text-underline-offset: 0.15em;
   text-decoration-thickness: 0.0625em;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
   &:visited,
   &:hover {

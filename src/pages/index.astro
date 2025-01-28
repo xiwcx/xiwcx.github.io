@@ -11,7 +11,7 @@ const processedPosts = posts
 
 <Layout>
   <section>
-    <h2>Writing</h2>
+    <h2 class="heading">Writing</h2>
 
     <ul class="recent">
       {
@@ -26,12 +26,52 @@ const processedPosts = posts
 </Layout>
 
 <style>
+  .heading {
+    margin-block-end: 1em;
+    font-variation-settings: "wght" 500;
+  }
+
   .recent {
     list-style-type: none;
-    padding-inline-start: 0;
+    padding-inline-start: 1ch;
 
     a {
-      text-decoration: none;
+      text-decoration-color: transparent;
+      transition: text-decoration-color 0.1s ease-in-out;
+
+      &:hover {
+        text-decoration-color: currentColor;
+      }
+    }
+
+    li {
+      --svg-light: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21.2 26.5'><path d='M5 20.5c-.7-.3-1 0-1.6.4-1 .7-1.6 1.8-2.5 2.6a1 1 0 0 1-.9.2c.5-.8.6-1.8 1.5-2.3.4-.3 0-.7.3-1 .9-1.2 1.6-2.5 2.4-3.7A22 22 0 0 1 7 12.9a4 4 0 0 0 .5-4.2C7.2 7 6.7 5.5 6.1 3.9c-.2-.6.2-.9.7-1.2 1-.5 2 0 2.9.4.8.3 1.6 1 2 1.7.2.7.6.4 1 0l3-3.6c.3-.6 1-1 1.7-1 .9 0 1.7-.4 2.6.1.7.4 1.1 1.2 1.2 2 0 1-.3 2.1-1 2.9-1 1.2-2 2.5-2.9 3.9l-1.8 2.3a3 3 0 0 0-.8 2.7c.3 1.2.5 2.5.6 3.8 0 .2 0 .3.3.4.4.2.6.7.5 1.2 0 .2 0 .5.2.6 1.2.6 1.1 1.7 1 2.8-.1.6 0 1.1.4 1.5.3.5-.2 2-.7 2a2 2 0 0 1-1.8-.8c-.7-1.3-1.5-2.6-2.1-4l-1.9-3.3c-.3-.6-.7-.5-1.1-.2-1 .8-1.7 1.8-3 2-.5.1-.2.6-.3 1 0 .4-.5.8-1 .8-.4 0-.8 0-1.1-.2-.4-.5.1-.8.3-1.2Z' fill='oklch(98% 0.02 5)'/></svg>");
+      --svg-dark: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21.2 26.5'><path d='M5 20.5c-.7-.3-1 0-1.6.4-1 .7-1.6 1.8-2.5 2.6a1 1 0 0 1-.9.2c.5-.8.6-1.8 1.5-2.3.4-.3 0-.7.3-1 .9-1.2 1.6-2.5 2.4-3.7A22 22 0 0 1 7 12.9a4 4 0 0 0 .5-4.2C7.2 7 6.7 5.5 6.1 3.9c-.2-.6.2-.9.7-1.2 1-.5 2 0 2.9.4.8.3 1.6 1 2 1.7.2.7.6.4 1 0l3-3.6c.3-.6 1-1 1.7-1 .9 0 1.7-.4 2.6.1.7.4 1.1 1.2 1.2 2 0 1-.3 2.1-1 2.9-1 1.2-2 2.5-2.9 3.9l-1.8 2.3a3 3 0 0 0-.8 2.7c.3 1.2.5 2.5.6 3.8 0 .2 0 .3.3.4.4.2.6.7.5 1.2 0 .2 0 .5.2.6 1.2.6 1.1 1.7 1 2.8-.1.6 0 1.1.4 1.5.3.5-.2 2-.7 2a2 2 0 0 1-1.8-.8c-.7-1.3-1.5-2.6-2.1-4l-1.9-3.3c-.3-.6-.7-.5-1.1-.2-1 .8-1.7 1.8-3 2-.5.1-.2.6-.3 1 0 .4-.5.8-1 .8-.4 0-.8 0-1.1-.2-.4-.5.1-.8.3-1.2Z' fill='oklch(25% 0.04 5)'/></svg>");
+
+      list-style-image: var(--svg-dark);
+      padding-inline-start: 1ch;
+
+      @media (prefers-color-scheme: dark) {
+        list-style-image: var(--svg-light);
+      }
+
+      body:has(#theme-dark:checked) & {
+        list-style-image: var(--svg-light);
+      }
+
+      body:has(#theme-light:checked) & {
+        list-style-image: var(--svg-dark);
+      }
+
+      &::marker {
+        font-size: 1.5em;
+        line-height: calc(1.5 / 2);
+        padding-inline: 1ch;
+      }
+
+      & + li {
+        margin-block-start: 0.5em;
+      }
     }
   }
 

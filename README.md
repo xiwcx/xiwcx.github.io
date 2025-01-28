@@ -1,5 +1,11 @@
 # Astro Starter Kit: Basics
 
+## TODO:
+
+- [ ] fix headings
+- [ ] fix link (highlight) colors
+- [ ] add bullets to list
+
 ```sh
 npm create astro@latest -- --template basics
 ```
