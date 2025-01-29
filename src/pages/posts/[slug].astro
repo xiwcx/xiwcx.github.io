@@ -1,4 +1,5 @@
 ---
+import dayjs from "dayjs";
 import Layout from "../../layouts/Default.astro";
 import { getCollection, render } from "astro:content";
 import {
@@ -20,20 +21,25 @@ const { post } = Astro.props;
 const herodId = post.data.hero_cloudinary_id;
 const hero = herodId ? await getCloudinaryResource(herodId) : undefined;
 const { Content } = await render(post);
+const formattedDate = dayjs(post.data.date).format("MMMM D, YYYY");
 ---
 
 <Layout>
-  <h1>{post.data.title}</h1>
+  <header>
+    <h1>{post.data.title}</h1>
 
-  {
-    hero && (
-      <CloudinaryImage
-        cloudinaryResource={hero}
-        imageProps={{ fetchpriority: "high" }}
-        sizes={defaultImageSizes}
-      />
-    )
-  }
+    {
+      hero && (
+        <CloudinaryImage
+          cloudinaryResource={hero}
+          imageProps={{ fetchpriority: "high" }}
+          sizes={defaultImageSizes}
+        />
+      )
+    }
+
+    <p class="date">{formattedDate}</p>
+  </header>
 
   <article class="font-body">
     <Content />
@@ -41,6 +47,11 @@ const { Content } = await render(post);
 </Layout>
 
 <style>
+  .date {
+    font-size: 0.75em;
+    font-variation-settings: "wght" 200;
+  }
+
   article {
     --border-radius: 0.25em;
 
