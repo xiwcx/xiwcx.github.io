@@ -61,6 +61,7 @@ body {
 
 header {
   grid-area: header;
+  margin-block-end: 4em;
   width: 100%;
 
   .title {
@@ -99,9 +100,14 @@ main {
   }
 }
 
-footer {
+.footer {
   grid-area: footer;
+  margin-block-start: 8em;
   width: 100%;
+
+  p {
+    font-size: 0.75em;
+  }
 }
 
 input,
@@ -138,30 +144,6 @@ a {
   color: inherit;
   text-underline-offset: 0.15em;
   text-decoration-thickness: 0.0625em;
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 
   &:visited,
   &:hover {

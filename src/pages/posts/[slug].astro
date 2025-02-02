@@ -1,6 +1,7 @@
 ---
 import dayjs from "dayjs";
 import Layout from "../../layouts/Default.astro";
+import EndMark from "../../components/EndMark.astro";
 import { getCollection, render } from "astro:content";
 import {
   defaultImageSizes,
@@ -44,6 +45,8 @@ const formattedDate = dayjs(post.data.date).format("MMMM D, YYYY");
   <article class="font-body">
     <Content />
   </article>
+
+  <footer><EndMark /></footer>
 </Layout>
 
 <style>
@@ -55,8 +58,15 @@ const formattedDate = dayjs(post.data.date).format("MMMM D, YYYY");
   article {
     --border-radius: 0.25em;
 
-    margin-trim: block;
-    padding-block-end: 2lh;
+    letter-spacing: 0.01em;
+
+    /*
+     * keep an eye on https://caniuse.com/mdn-css_properties_margin-trim_block
+     * https://12daysofweb.dev/2024/css-margin-trim-line-height-units/
+     */
+    @support (margin-trim: block) {
+      margin-trim: block;
+    }
 
     h1,
     h2,
@@ -95,6 +105,10 @@ const formattedDate = dayjs(post.data.date).format("MMMM D, YYYY");
         border-radius: var(--border-radius);
         padding: 0.125em 0.25em;
       }
+    }
+
+    strong {
+      font-variation-settings: "wght" 600;
     }
 
     .astro-code {
@@ -147,6 +161,17 @@ const formattedDate = dayjs(post.data.date).format("MMMM D, YYYY");
           width: 2.5ch;
         }
       }
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    padding-block-start: 4em;
+
+    svg {
+      height: 1em;
+      width: auto;
     }
   }
 </style>
