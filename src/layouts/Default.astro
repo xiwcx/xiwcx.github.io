@@ -8,16 +8,25 @@ import Logo from "../components/Logo.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link
-      href="https://api.fontshare.com/v2/css?f[]=crimson-pro@1&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=crimson-pro@1,2&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://use.typekit.net/tdw5rhu.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Your Site's Title"
+      href={new URL("rss.xml", "https://welchcanavan.com")}
+    />
+
     <meta name="color-scheme" content="dark light" />
     <meta name="generator" content={Astro.generator} />
-    <title>i. welch canavan</title>
 
-    <link rel="stylesheet" href="https://use.typekit.net/tdw5rhu.css" />
+    <title>i. welch canavan</title>
 
     <script is:inline>
       const theme = localStorage.getItem("theme") || "system";
@@ -30,8 +39,6 @@ import Logo from "../components/Logo.astro";
 
       document.documentElement.style.colorScheme = colorScheme[theme];
     </script>
-
-    <link rel="stylesheet" href="/styles/main.css" />
   </head>
 
   <body>
@@ -61,7 +68,7 @@ import Logo from "../components/Logo.astro";
       <slot />
     </main>
 
-    <footer>
+    <footer class="footer">
       <FormTheme />
 
       <p>© 2024 Welch Canavan</p>
@@ -79,8 +86,6 @@ import Logo from "../components/Logo.astro";
         }
       }
       nav {
-        margin-block-end: 2em;
-
         ul {
           align-items: center;
           display: flex;
