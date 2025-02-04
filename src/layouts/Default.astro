@@ -1,6 +1,15 @@
 ---
 import FormTheme from "../components/Theme/FormTheme.astro";
 import Logo from "../components/Logo.astro";
+
+export interface Props {
+  articleTitle?: string;
+}
+
+const { articleTitle } = Astro.props;
+const siteTitle = "i. welch canavan";
+const title = articleTitle ? `${articleTitle} | ${siteTitle}` : siteTitle;
+const isArticle = articleTitle !== undefined;
 ---
 
 <!doctype html>
@@ -19,14 +28,17 @@ import Logo from "../components/Logo.astro";
     <link
       rel="alternate"
       type="application/rss+xml"
-      title="Your Site's Title"
-      href={new URL("rss.xml", "https://welchcanavan.com")}
+      title={siteTitle}
+      href={new URL("rss.xml", Astro.site)}
     />
 
     <meta name="color-scheme" content="dark light" />
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content={isArticle ? articleTitle : siteTitle} />
+    <meta property="og:type" content={isArticle ? "article" : "website"} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
 
-    <title>i. welch canavan</title>
+    <title>{title}</title>
 
     <script is:inline>
       const theme = localStorage.getItem("theme") || "system";

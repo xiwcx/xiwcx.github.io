@@ -3,7 +3,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://xiwcx.github.io",
+  site: "https://welchcanavan.com",
 
   env: {
     schema: {

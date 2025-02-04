@@ -25,7 +25,7 @@ const { Content } = await render(post);
 const formattedDate = dayjs(post.data.date).format("MMMM D, YYYY");
 ---
 
-<Layout>
+<Layout articleTitle={post.data.title}>
   <header>
     <h1>{post.data.title}</h1>
 
