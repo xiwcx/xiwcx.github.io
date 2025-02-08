@@ -1,6 +1,8 @@
 ---
 import FormTheme from "../components/Theme/FormTheme.astro";
 import Logo from "../components/Logo.astro";
+import Posthog from "../components/Posthog.astro";
+import { cloudinaryClient } from "../utils/cloudinary";
 
 export interface Props {
   articleTitle?: string;
@@ -10,6 +12,12 @@ const { articleTitle } = Astro.props;
 const siteTitle = "i. welch canavan";
 const title = articleTitle ? `${articleTitle} | ${siteTitle}` : siteTitle;
 const isArticle = articleTitle !== undefined;
+
+const defaultOGImage = await cloudinaryClient.url("themed-logo-dark-pink", {
+  width: 1200,
+  height: 630,
+  crop: "fill",
+});
 ---
 
 <!doctype html>
@@ -37,6 +45,7 @@ const isArticle = articleTitle !== undefined;
     <meta property="og:title" content={isArticle ? articleTitle : siteTitle} />
     <meta property="og:type" content={isArticle ? "article" : "website"} />
     <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:image" content={defaultOGImage} />
 
     <title>{title}</title>
 
@@ -51,6 +60,7 @@ const isArticle = articleTitle !== undefined;
 
       document.documentElement.style.colorScheme = colorScheme[theme];
     </script>
+    <Posthog />
   </head>
 
   <body>
@@ -85,9 +95,7 @@ const isArticle = articleTitle !== undefined;
 
       <p>© 2024 Welch Canavan</p>
     </footer>
-  </body>
-
-  <style>
+  </body><style>
     header {
       .title-container {
         width: 100%;
