@@ -4,20 +4,45 @@ import Logo from "../components/Logo.astro";
 import Posthog from "../components/Posthog.astro";
 import { cloudinaryClient } from "../utils/cloudinary";
 
+type Article = {
+  title?: string;
+  description?: string | undefined;
+};
+
 export interface Props {
-  articleTitle?: string;
+  article?: Article;
 }
 
-const { articleTitle } = Astro.props;
+const { article = {} } = Astro.props;
 const siteTitle = "i. welch canavan";
-const title = articleTitle ? `${articleTitle} | ${siteTitle}` : siteTitle;
-const isArticle = articleTitle !== undefined;
+const isArticle = article.title !== undefined;
+const title = isArticle ? `${article.title} | ${siteTitle}` : siteTitle;
 
-const defaultOGImage = await cloudinaryClient.url("themed-logo-dark-pink", {
-  width: 1200,
-  height: 630,
-  crop: "fill",
-});
+const OGImage = article.title
+  ? await cloudinaryClient.url("dynamic-social-card-background_xirhh6", {
+      transformation: [
+        { width: 1200, height: 630 },
+        {
+          overlay: {
+            font_family: "Roboto",
+            font_size: 75,
+            font_weight: "bold",
+            text: article.title,
+          },
+          color: "#fff3f7",
+          gravity: "south_west",
+          width: 1000,
+          crop: "fit",
+          x: 60,
+          y: 40,
+        },
+      ],
+    })
+  : await cloudinaryClient.url("themed-logo-dark-pink", {
+      width: 1200,
+      height: 630,
+      crop: "fill",
+    });
 ---
 
 <!doctype html>
@@ -42,10 +67,15 @@ const defaultOGImage = await cloudinaryClient.url("themed-logo-dark-pink", {
 
     <meta name="color-scheme" content="dark light" />
     <meta name="generator" content={Astro.generator} />
-    <meta property="og:title" content={isArticle ? articleTitle : siteTitle} />
+    <meta property="og:title" content={title} />
+    {
+      article.description && (
+        <meta property="og:description" content={article.description} />
+      )
+    }
     <meta property="og:type" content={isArticle ? "article" : "website"} />
     <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
-    <meta property="og:image" content={defaultOGImage} />
+    <meta property="og:image" content={OGImage} />
 
     <title>{title}</title>
 

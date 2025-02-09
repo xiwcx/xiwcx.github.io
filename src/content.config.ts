@@ -14,6 +14,7 @@ const elsewhere = defineCollection({
 
 const postSchema = z.object({
   draft: z.boolean().default(false),
+  description: z.string().optional(),
   title: z.string(),
   slug: z.string(),
   date: z.coerce.date(),
