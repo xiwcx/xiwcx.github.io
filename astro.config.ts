@@ -23,9 +23,6 @@ export default defineConfig({
           headingProperties: {
             className: ["anchor"],
           },
-          // properties: {
-          //   className: ["anchor-link"],
-          // },
         },
       ],
     ],

@@ -67,7 +67,7 @@ const OGImage = article.title
 
     <meta name="color-scheme" content="dark light" />
     <meta name="generator" content={Astro.generator} />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={article?.title || siteTitle} />
     {
       article.description && (
         <meta property="og:description" content={article.description} />
