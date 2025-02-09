@@ -94,11 +94,6 @@ const formattedDate = dayjs(post.data.date).format("MMMM D, YYYY");
       font-size: 0.8em;
     }
 
-    a {
-      color: var(--color-text-highlight);
-      opacity: 0.9;
-    }
-
     p {
       margin-block: 1lh;
 
@@ -106,6 +101,11 @@ const formattedDate = dayjs(post.data.date).format("MMMM D, YYYY");
         background: var(--color-lowlight);
         border-radius: var(--border-radius);
         padding: 0.125em 0.25em;
+      }
+
+      a {
+        color: var(--color-text-highlight);
+        opacity: 0.9;
       }
     }
 
@@ -187,6 +187,37 @@ const formattedDate = dayjs(post.data.date).format("MMMM D, YYYY");
     svg {
       height: 1em;
       width: auto;
+    }
+  }
+</style>
+
+<style is:global>
+  .anchor {
+    a {
+      color: var(--color-text);
+      text-decoration: none;
+
+      @media (min-width: 500px) {
+        position: relative;
+      }
+
+      &::before {
+        content: "#";
+        opacity: 0.5;
+        padding-inline-end: 0.125em;
+        transition: opacity 0.25s ease-in-out;
+
+        @media (min-width: 700px) {
+          position: absolute;
+          left: -1em;
+        }
+      }
+
+      &:hover {
+        &::before {
+          opacity: 0.9;
+        }
+      }
     }
   }
 </style>

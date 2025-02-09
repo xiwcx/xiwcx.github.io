@@ -14,30 +14,10 @@ cloudinaryClient.config({
 
 export { cloudinaryClient };
 
-const cloudinaryDerivedSchema = z.object({
-  transformation: z.string(),
-  format: z.string(),
-  bytes: z.number(),
-  id: z.string(),
-  url: z.string(),
-  secure_url: z.string(),
-  extension: z.string(),
-});
-
 export const cloudinaryResourceSchema = z.object({
-  asset_id: z.string(),
   public_id: z.string(),
-  format: z.string(),
-  version: z.number(),
-  resource_type: z.string(),
-  type: z.string(),
-  created_at: z.string(),
-  bytes: z.number(),
   width: z.number(),
   height: z.number(),
-  asset_folder: z.string(),
-  display_name: z.string(),
-  url: z.string(),
   secure_url: z.string(),
   context: z
     .object({
@@ -46,17 +26,6 @@ export const cloudinaryResourceSchema = z.object({
       }),
     })
     .optional(),
-  last_updated: z
-    .object({
-      context_updated_at: z.string(),
-      updated_at: z.string(),
-    })
-    .optional(),
-  next_cursor: z.string(),
-  derived: z.array(cloudinaryDerivedSchema),
-  rate_limit_allowed: z.number(),
-  rate_limit_reset_at: z.coerce.date(),
-  rate_limit_remaining: z.number(),
 });
 
 export type CloudinaryResource = z.infer<typeof cloudinaryResourceSchema>;
@@ -66,6 +35,8 @@ export const getCloudinaryResource = async (cloudinaryId: string) => {
 
   try {
     const response = await cloudinaryClient.api.resource(cloudinaryId);
+
+    // debugger;
 
     resource = cloudinaryResourceSchema.parse(response);
   } catch (e) {
