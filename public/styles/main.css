@@ -34,7 +34,7 @@
     color-scheme: dark;
   }
 
-  --font-family-default: "ivyepic-variable", sans-serif;
+  --font-family-default: "Inter", sans-serif;
   --font-family-body: "Crimson Pro", serif;
 }
 
@@ -42,7 +42,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-family-default);
-  font-variation-settings: "slnt" 0, "wght" 300, "wdth" 95;
+  font-variation-settings: "wght" 350;
   font-size: clamp(1.2em, 1.75vw, 1.7em);
   display: grid;
   /* https://webtypography.net/2.1.2 */

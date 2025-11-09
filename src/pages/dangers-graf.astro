@@ -3,12 +3,14 @@ import Bare from "../layouts/Bare.astro";
 ---
 
 <Bare>
-  <script type="text/javascript" src="//use.typekit.net/xpn4yxv.js"></script>
-  <script type="text/javascript">
-    try {
-      Typekit.load();
-    } catch (e) {}
-  </script>
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </Fragment>
   <style>
     body {
       margin: 0;
@@ -59,7 +61,7 @@ import Bare from "../layouts/Bare.astro";
     .h1,
     .h2 {
       fill: #666;
-      font-family: proxima-nova;
+      font-family: "Inter", sans-serif;
       font-style: normal;
     }
 
